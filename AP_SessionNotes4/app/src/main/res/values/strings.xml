@@ -1,0 +1,94 @@
+<resources>
+    <string name="app_name">AP_SessionNotes4</string>
+    <string name="title_activity_session_management">SessionManagement</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="hello_world">Hello Woopsie!</string>
+    <string name="tab1_fragment_string">Tab 1</string>
+    <string name="tab2_fragment_string">Tab 2</string>
+    <string name="tab3_fragment_string">Tab 3</string>
+
+    <string name="title_section1">Welcome</string>
+    <string name="title_section2">Initialize Session</string>
+    <string name="title_section3">Image Details</string>
+
+    <!-- menu_main -->
+    <string name="action_settings">Settings</string>
+
+    <!-- activity_welcome -->
+    <string name="create_button_text">Create A New Session</string>
+    <string name="open_button_text">Append To An Existing Session</string>
+    <string name="review_button_text">Review An Existing Session</string>
+    <string name="close_button_text">Close The Current Session</string>
+    <string name="delete_button_text">Delete Session</string>
+
+    <!-- activity_initialize_session -->
+    <string name="session_name_label">Session Name</string>
+    <string name="session_name_hint">Enter a session name.</string>
+    <string name="location_label">Location</string>
+    <string name="location_hint">Enter a location.</string>
+    <string name="file_name_hint">File Name</string>
+    <string name="id_label">ID</string>
+    <string name="time_zone_label_text">Time Zone</string>
+    <string name="dst_label_text">DST</string>
+    <string name="camera_label_text">Camera</string>
+    <string name="camera_hint">dSLR1</string>
+    <string name="camera_time_zone_hint">GMT - 8:00</string>
+    <string name="android_device_label_text">Android Device</string>
+    <string name="android_id_hint">TAB1</string>
+    <string name="android_device_time_zone_hint">GMT - 8:00</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_activity_image_details">ActivityImageDetails</string>
+    <string name="interference_text">Interference</string>
+    <string name="image_details_text">Image Details</string>
+    <string name="focus_text">Focus</string>
+    <string name="polar_align_text">Polar Alignment</string>
+    <string name="dark_frame_text">Dark Frames</string>
+    <string name="light_frame_text">Light Frames</string>
+    <string name="cal_text">Calibration</string>
+    <string name="other_text">Other</string>
+    <string name="vibe_text">Vibration</string>
+    <string name="flashlight_text">Flashlight</string>
+    <string name="car_text">Car Lights</string>
+    <string name="airplane_text">Airplane</string>
+    <string name="satellite_text">Satellite</string>
+    <string name="meteor_text">Meteor</string>
+    <string name="camera_settings_txt">Camera Settings</string>
+    <string name="exposure_time_text">Exposure Time</string>
+    <string name="ms_text">ms</string>
+    <string name="iso_text">ISO</string>
+    <string name="lockup_text">Mirror Lock-Up</string>
+    <string name="target_text">Target ID</string>
+    <string name="save_text">Save</string>
+    <string name="flat_text">Flat</string>
+    <string name="exp_time_hint">30000</string>
+    <string name="temp_file_name">file name</string>
+    <string name="android_time_zone_hint">GMT - 8:00</string>
+    <string name="bias_text">Bias</string>
+    <string name="iso_hint">1600</string>
+    <string name="target_id_hint">M31-Andromeda Galaxy</string>
+
+
+    <!-- activity_review_session -->
+    <string name="label_session_to_review">Select an existing AP Session for review.</string>
+    <string name="title_activity_review_session">Select / Review Session</string>
+
+    <!-- activity_close_session -->
+    <string name="activity_close_title">Close an Existing Session</string>
+    <string name="title_activity_close_session">Close AP Session</string>
+
+    <!-- activity_delete_session -->
+    <string name="label_session_to_delete">Select an existing AP Session to permanently delete.</string>
+    <string name="title_activity_delete_session">Delete an Existing AP Session</string>
+    <string name="title_activity_delete">Delete Session</string>
+    <string name="title_activity_activity_review">ActivityReview</string>
+    <string name="review_session_text">Will need a selection option for a list of files for sessions.</string>
+    <string name="title_activity_i_close_session">iCloseSession</string>
+    <string name="closeSession">Close the current session.</string>
+    <string name="closeSessionNow">Close session.</string>
+    <string name="miscPopToastForClose">Should probably just pop a \'Toast\' message that the current session is closed.</string>
+    <string name="title_activity_i_delete_session">iDeleteSession</string>
+    <string name="delete_edit_text">Will need a selection option for a list of files for sessions to delete.</string>
+
+</resources>

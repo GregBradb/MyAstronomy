@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.comcast.g_bradburn.ap_sessionnotes4.ActivityReview"
+    tools:showIn="@layout/activity_review">
+
+    <TextView
+        android:id="@+id/textViewReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_session_to_review" />
+
+    <EditText
+        android:id="@+id/editReviewSession"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewReview"
+        android:inputType="textMultiLine"
+        android:text="@string/review_session_text" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="55dp"
+        android:layout_toEndOf="@+id/textViewReview"
+        android:layout_toRightOf="@+id/textViewReview"
+        android:src="@drawable/content_edit" />
+
+</RelativeLayout>
