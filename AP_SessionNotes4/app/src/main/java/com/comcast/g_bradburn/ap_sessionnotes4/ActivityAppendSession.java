@@ -13,7 +13,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class ActivityImageDetails extends AppCompatActivity {
+public class ActivityAppendSession extends AppCompatActivity {
     // This class is to allow the user to capture changes in the session.  When the Floating Action Button (fab)
     //  is clicked, it should:
     // TODO:  capture the status of all the image detail controls.
@@ -60,12 +60,12 @@ public class ActivityImageDetails extends AppCompatActivity {
 
                 EditText expTimeEdtTxt = (EditText) findViewById(R.id.expTimeEditTxt);
                 String mExpTime = expTimeEdtTxt.getText().toString();
-                Toast toast = Toast.makeText(ActivityImageDetails.this, mExpTime, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, mExpTime, Toast.LENGTH_LONG);
                 toast.show();
 
                 EditText isoEdtTxt = (EditText) findViewById(R.id.editISO);
                 String mISO = isoEdtTxt.getText().toString();
-                toast = Toast.makeText(ActivityImageDetails.this, mISO, Toast.LENGTH_LONG);
+                toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_LONG);
                 toast.show();
 
                 String lckup = " false.";
@@ -79,13 +79,13 @@ public class ActivityImageDetails extends AppCompatActivity {
                 {
                     mLockup = false;
                 }
-                toast = Toast.makeText(ActivityImageDetails.this, "Lockup: " + lckup, Toast.LENGTH_LONG);
+                toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_LONG);
                 toast.show();
 
                 mirrorLockupChkBx.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast toast = Toast.makeText(ActivityImageDetails.this, "Mirror LockUp", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(ActivityAppendSession.this, "Mirror LockUp", Toast.LENGTH_LONG);
                         toast.show();
                     }
                 });
@@ -93,7 +93,7 @@ public class ActivityImageDetails extends AppCompatActivity {
 
                 EditText targetEdtTxt = (EditText) findViewById(R.id.editTargetID);
                 String mTargetID = targetEdtTxt.getText().toString();
-                toast = Toast.makeText(ActivityImageDetails.this, mTargetID, Toast.LENGTH_LONG);
+                toast = Toast.makeText(ActivityAppendSession.this, mTargetID, Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -144,7 +144,7 @@ public class ActivityImageDetails extends AppCompatActivity {
                         break;
                 }
 
-                Toast toast = Toast.makeText(ActivityImageDetails.this, "Radio Button = " + mImageType, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Radio Button = " + mImageType, Toast.LENGTH_LONG);
 
                 toast.show();
             }
@@ -154,7 +154,7 @@ public class ActivityImageDetails extends AppCompatActivity {
         vibBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityImageDetails.this, "Vibration", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Vibration", Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -163,7 +163,7 @@ public class ActivityImageDetails extends AppCompatActivity {
         flashlightBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityImageDetails.this, "Flashlight", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Flashlight", Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -172,7 +172,7 @@ public class ActivityImageDetails extends AppCompatActivity {
         carLightsBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityImageDetails.this, "Car Lights", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Car Lights", Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -181,7 +181,7 @@ public class ActivityImageDetails extends AppCompatActivity {
         airplaneBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityImageDetails.this, "Airplane", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Airplane", Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -190,7 +190,7 @@ public class ActivityImageDetails extends AppCompatActivity {
         satelliteBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityImageDetails.this, "Satellite", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Satellite", Toast.LENGTH_LONG);
                 toast.show();
             }
         });
@@ -199,7 +199,7 @@ public class ActivityImageDetails extends AppCompatActivity {
         meteorBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityImageDetails.this, "Meteor", Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Meteor", Toast.LENGTH_LONG);
                 toast.show();
             }
         });

@@ -20,7 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SessionManagement extends AppCompatActivity {
+public class ActivityCreateSession extends AppCompatActivity {
     //  This class initializes a session
     //  TODO:  Read and use all controls to initialize a dataBase session
     //  TODO:  Return a reference to the session to the calling activity through an intent so it can be used for the session
@@ -33,6 +33,8 @@ public class SessionManagement extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
+
+    private String mLogMessage = "TEST";
 
     private static final String MESSAGE_1 = "YOUR MESSAGE";
 
@@ -80,42 +82,42 @@ public class SessionManagement extends AppCompatActivity {
 
                 EditText ssnEditText = (EditText) findViewById(R.id.session_edit_text);
                 mSessionName = ssnEditText.getText().toString();
-                Log.i("TEST", "entered " + mSessionName);
+                Log.i(mLogMessage, "Session Name: " + mSessionName);
 
                 EditText locEditText = (EditText) findViewById(R.id.location_edit_text);
                 mLocation = locEditText.getText().toString();
-                Log.i("TEST", "entered " + mLocation);
+                Log.i(mLogMessage, "Location: " + mLocation);
 
                 TextView fname = (TextView) findViewById(R.id.file_name_text_view);
                 mFileName = mLocation + "_" + mSessionName;
                 fname.setText(mFileName);
-                Log.i("TEST", "entered " + mFileName);
+                Log.i(mLogMessage, "File Name will be: " + mFileName);
 
                 EditText cameraID = (EditText) findViewById(R.id.camera_id);
                 mCameraID = cameraID.getText().toString();
-                Log.i("TEST", "entered " + mCameraID);
+                Log.i(mLogMessage, "Camera ID: " + mCameraID);
 
                 EditText cameraTimeZone = (EditText) findViewById(R.id.camera_time_zone);
                 mCameraTZ = cameraTimeZone.getText().toString();
-                Log.i("TEST", "entered " + mCameraTZ);
+                Log.i(mLogMessage, "Camera TimeZone: " + mCameraTZ);
 
                 CheckBox cameraChkBx = (CheckBox) findViewById(R.id.camera_dst_set);
                 mCameraDST = cameraChkBx.isChecked();
-                Log.i("TEST", "entered " + mCameraDST.toString());
+                Log.i(mLogMessage, "Camera DST set: " + mCameraDST.toString());
 
                 EditText androidID = (EditText) findViewById(R.id.android_id);
                 mAndroidID = androidID.getText().toString();
-                Log.i("TEST", "entered " + mAndroidID);
+                Log.i(mLogMessage, "Android Device ID: " + mAndroidID);
 
-                EditText androidTimeZone = (EditText) findViewById(R.id.android_id);
+                EditText androidTimeZone = (EditText) findViewById(R.id.android_time_zone);
                 mAndroidTZ = androidTimeZone.getText().toString();
-                Log.i("TEST", "entered " + mAndroidTZ);
+                Log.i(mLogMessage, "Android Device TimeZone: " + mAndroidTZ);
 
                 CheckBox tabletChkBx = (CheckBox) findViewById(R.id.android_dst_set);
                 mAndroidDST = tabletChkBx.isChecked();
-                Log.i("TEST", "entered " + mAndroidDST.toString());
+                Log.i(mLogMessage, "Android DST set: " + mAndroidDST.toString());
 
-                Toast toast = Toast.makeText(SessionManagement.this, "File name is: " + mFileName, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(ActivityCreateSession.this, "File name is: " + mFileName, Toast.LENGTH_LONG);
                 toast.show();
 
                 String camera_str_1 = "Camera id:  " + mCameraID + ", Time Zone: " + mCameraTZ + ", DST ";
@@ -134,7 +136,7 @@ public class SessionManagement extends AppCompatActivity {
                     android_str_1 = android_str_1 + "OFF.";
                 }
 
-                toast = Toast.makeText(SessionManagement.this, camera_str_1 + ".\n" + android_str_1, Toast.LENGTH_LONG);
+                toast = Toast.makeText(ActivityCreateSession.this, camera_str_1 + ".\n" + android_str_1, Toast.LENGTH_LONG);
                 toast.show();
 
                 // TODO:  Create a session file / database with the appropriate file name.

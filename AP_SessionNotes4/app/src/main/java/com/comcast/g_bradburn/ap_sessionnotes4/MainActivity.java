@@ -2,8 +2,6 @@ package com.comcast.g_bradburn.ap_sessionnotes4;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -23,29 +21,29 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         Button create_btn = (Button) findViewById(R.id.create_button);
         create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent session_mgmt_intent = new Intent(MainActivity.this, SessionManagement.class);
+                Intent session_mgmt_intent = new Intent(MainActivity.this, ActivityCreateSession.class);
                 startActivity(session_mgmt_intent);
             }
         });
 
-        Button open_btn = (Button) findViewById(R.id.open_button);
+        Button open_btn = (Button) findViewById(R.id.append_button);
         open_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent session_open_intent = new Intent(MainActivity.this, ActivityImageDetails.class);
+                Intent session_open_intent = new Intent(MainActivity.this, ActivityAppendSession.class);
                 startActivity(session_open_intent);
             }
         });
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         reviewBtn.setOnClickListener(new View.OnClickListener(){
             @Override
         public  void onClick(View v){
-                Intent session_review_intent = new Intent(MainActivity.this, ActivityReview.class);
+                Intent session_review_intent = new Intent(MainActivity.this, ActivityReviewSession.class);
                 startActivity(session_review_intent);
             }
         });
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         closeBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View v){
-                Intent session_close_intent = new Intent(MainActivity.this, CloseSession.class);
+                Intent session_close_intent = new Intent(MainActivity.this, ActivityCloseSesion.class);
                 startActivity(session_close_intent);
             }
         });
@@ -72,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View v){
-                Intent session_delete_intent = new Intent(MainActivity.this, DeleteSession.class);
+                Intent session_delete_intent = new Intent(MainActivity.this, ActivityDeleteSession.class);
                 startActivity(session_delete_intent);
             }
         });

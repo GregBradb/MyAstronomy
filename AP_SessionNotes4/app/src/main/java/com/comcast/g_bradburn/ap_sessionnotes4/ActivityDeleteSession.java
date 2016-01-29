@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class DeleteSession extends AppCompatActivity {
+public class ActivityDeleteSession extends AppCompatActivity {
     //  This class will remove a specific session from the dataBase
     //  TODO:  Build a list of available sessions and display it as part of a dropdown list.
     //  TODO:  Remove the selected session from the dataBase

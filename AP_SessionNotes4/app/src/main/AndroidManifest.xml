@@ -23,7 +23,7 @@
         </activity>
 
         <activity
-            android:name=".SessionManagement"
+            android:name=".ActivityCreateSession"
             android:label="@string/title_activity_session_management"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -33,7 +33,7 @@
         </activity>
 
         <activity
-            android:name=".ActivityImageDetails"
+            android:name=".ActivityAppendSession"
             android:label="@string/title_activity_activity_image_details"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name=".ActivityReview"
+            android:name=".ActivityReviewSession"
             android:label="@string/title_activity_activity_review"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -53,7 +53,7 @@
         </activity>
 
         <activity
-            android:name=".CloseSession"
+            android:name=".ActivityCloseSesion"
             android:label="@string/title_activity_i_close_session"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -63,7 +63,7 @@
         </activity>
 
         <activity
-            android:name=".DeleteSession"
+            android:name=".ActivityDeleteSession"
             android:label="@string/title_activity_i_delete_session"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

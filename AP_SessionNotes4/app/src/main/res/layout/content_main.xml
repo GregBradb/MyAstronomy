@@ -28,7 +28,7 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/open_button"
+        android:id="@+id/append_button"
         android:layout_width="@dimen/big_button_width"
         android:layout_height="@dimen/welcome_height"
         android:layout_below="@+id/create_button"
@@ -42,7 +42,7 @@
         android:id="@+id/review_button"
         android:layout_width="@dimen/big_button_width"
         android:layout_height="@dimen/welcome_height"
-        android:layout_below="@+id/open_button"
+        android:layout_below="@+id/append_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/welcome_margin"
         android:background="@color/ap_background_red"

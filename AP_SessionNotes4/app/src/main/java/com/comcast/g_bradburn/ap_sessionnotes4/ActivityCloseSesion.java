@@ -7,16 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class ActivityReview extends AppCompatActivity {
-    //  This class will allow the operator to review a session, line by line
-    //  TODO:  create a list of the possible sessions and populate a drop down for a list selection
-    //  TODO:  Capture the name of the session to review
-    //  TODO:  read the dataBase for the selected session and display as a listView
+public class ActivityCloseSesion extends AppCompatActivity {
+    //  This class will be used to close out an astronomy session.  Basically it just needs to break the connection
+    //    with the dataBase (if that is necessary).
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_review);
+        setContentView(R.layout.activity_close_session);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

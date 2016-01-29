@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.comcast.g_bradburn.ap_sessionnotes4.SessionManagement">
+    tools:context=".ActivityCreateSession">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
