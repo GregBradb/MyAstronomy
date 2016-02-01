@@ -1,5 +1,6 @@
 package com.comcast.g_bradburn.ap_sessionnotes4;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -44,6 +45,9 @@ public class ActivityAppendSession extends AppCompatActivity {
     Boolean mLockup;
     String mTargetID;
 
+    private SharedPreference sharedPreference;
+    Activity context = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,17 +59,37 @@ public class ActivityAppendSession extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Save", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Save", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
+
+                // Read and display the shared preferences
+                sharedPreference = new SharedPreference();
 
                 EditText expTimeEdtTxt = (EditText) findViewById(R.id.expTimeEditTxt);
                 String mExpTime = expTimeEdtTxt.getText().toString();
-                Toast toast = Toast.makeText(ActivityAppendSession.this, mExpTime, Toast.LENGTH_LONG);
+                int myExpTime;
+                if (mExpTime.equals("")) {
+                    myExpTime= 0;
+                    mExpTime = "Exposure time not set.";
+                } else {
+                    myExpTime = Integer.parseInt(mExpTime);
+                }
+                // saveString the shared preferences
+                sharedPreference.saveInt(context, SharedPreference.EXPOSURE_TIME_KEY, myExpTime);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, mExpTime, Toast.LENGTH_SHORT);
                 toast.show();
 
                 EditText isoEdtTxt = (EditText) findViewById(R.id.editISO);
                 String mISO = isoEdtTxt.getText().toString();
-                toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_LONG);
+                int myISO;
+                if (mISO.equals("")) {
+                    myISO= -999;
+                    mISO = "ISO not set.";
+                } else {
+                    myISO = Integer.parseInt(mISO);
+                }
+                sharedPreference.saveInt(context, SharedPreference.ISO_KEY, myISO);
+                toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_SHORT);
                 toast.show();
 
                 String lckup = " false.";
@@ -79,21 +103,40 @@ public class ActivityAppendSession extends AppCompatActivity {
                 {
                     mLockup = false;
                 }
-                toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_LONG);
+                sharedPreference.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
+                toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_SHORT);
                 toast.show();
 
                 mirrorLockupChkBx.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast toast = Toast.makeText(ActivityAppendSession.this, "Mirror LockUp", Toast.LENGTH_LONG);
+                        Toast toast = Toast.makeText(ActivityAppendSession.this, "Mirror LockUp", Toast.LENGTH_SHORT);
+                        toast.show();
+
+                        String lckup = " false.";
+                        CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
+                        if (mirrorLockupChkBx.isChecked())
+                        {
+                            mLockup = true;
+                            lckup = " true.";
+                        }
+                        else
+                        {
+                            mLockup = false;
+                        }
+                        SharedPreference sharedPreference2 = new SharedPreference();
+
+                        sharedPreference2.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
+                        toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_SHORT);
                         toast.show();
                     }
                 });
 
-
                 EditText targetEdtTxt = (EditText) findViewById(R.id.editTargetID);
                 String mTargetID = targetEdtTxt.getText().toString();
-                toast = Toast.makeText(ActivityAppendSession.this, mTargetID, Toast.LENGTH_LONG);
+
+                sharedPreference.saveString(context, SharedPreference.TARGET_ID_KEY, mTargetID);
+                toast = Toast.makeText(ActivityAppendSession.this, mTargetID, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -143,10 +186,14 @@ public class ActivityAppendSession extends AppCompatActivity {
                             mImageType = mImageTypes[mOthr];
                         break;
                 }
+                sharedPreference = new SharedPreference();
 
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Radio Button = " + mImageType, Toast.LENGTH_LONG);
+                sharedPreference.saveString(context, SharedPreference.IMAGE_TYPE_KEY, mImageType);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, "Radio Button = " + mImageType, Toast.LENGTH_SHORT);
 
                 toast.show();
+
+
             }
         });
 
@@ -154,7 +201,10 @@ public class ActivityAppendSession extends AppCompatActivity {
         vibBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Vibration", Toast.LENGTH_LONG);
+                sharedPreference = new SharedPreference();
+
+                sharedPreference.saveString(context, SharedPreference.VIBRATION_KEY, getString(R.string.bump_or_gust_txt));
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.bump_or_gust_txt), Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -163,7 +213,10 @@ public class ActivityAppendSession extends AppCompatActivity {
         flashlightBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Flashlight", Toast.LENGTH_LONG);
+                sharedPreference = new SharedPreference();
+
+                sharedPreference.saveString(context, SharedPreference.FLASHLIGHT_KEY, getString(R.string.flashlight));
+                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.flashlight, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -172,7 +225,10 @@ public class ActivityAppendSession extends AppCompatActivity {
         carLightsBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Car Lights", Toast.LENGTH_LONG);
+                sharedPreference = new SharedPreference();
+
+                sharedPreference.saveString(context, SharedPreference.CAR_LIGHTS_KEY, getString(R.string.car_lights));
+                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.car_lights, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -181,7 +237,10 @@ public class ActivityAppendSession extends AppCompatActivity {
         airplaneBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Airplane", Toast.LENGTH_LONG);
+                sharedPreference = new SharedPreference();
+
+                sharedPreference.saveString(context, SharedPreference.AIRPLANE_KEY, getString(R.string.airplane));
+                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.airplane, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -190,7 +249,10 @@ public class ActivityAppendSession extends AppCompatActivity {
         satelliteBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Satellite", Toast.LENGTH_LONG);
+                sharedPreference = new SharedPreference();
+
+                sharedPreference.saveString(context, SharedPreference.SATELLITE_KEY, getString(R.string.satellite));
+                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.satellite, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
@@ -199,7 +261,10 @@ public class ActivityAppendSession extends AppCompatActivity {
         meteorBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Meteor", Toast.LENGTH_LONG);
+                sharedPreference = new SharedPreference();
+
+                sharedPreference.saveString(context, SharedPreference.METEOR_KEY, getString(R.string.meteor));
+                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.meteor, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });

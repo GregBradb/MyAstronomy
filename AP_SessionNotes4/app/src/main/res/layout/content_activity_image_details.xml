@@ -11,13 +11,13 @@
         android:layout_marginTop="120dp">
 
         <TextView
-            android:id="@+id/image_details_label"
+            android:id="@+id/image_type_label"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
-            android:text="@string/image_details_text"
+            android:text="@string/image_type_text"
             android:textColor="@color/astrophoto_dark_text"
             android:textSize="24sp" />
 
@@ -341,7 +341,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-        <!-- TODO:  Use floating action button to save state instead of the button below -->
+        <!-- TODO:  Use floating action button to saveString state instead of the button below -->
 
     </TableRow>
 

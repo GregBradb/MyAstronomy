@@ -1,5 +1,6 @@
 package com.comcast.g_bradburn.ap_sessionnotes4;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +21,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+
 public class ActivityCreateSession extends AppCompatActivity {
     //  This class initializes a session
     //  TODO:  Read and use all controls to initialize a dataBase session
@@ -34,7 +38,13 @@ public class ActivityCreateSession extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
 
-    private String mLogMessage = "TEST";
+//    PREF_1 = "Test";
+
+    static String fileName = "temporary_data.txt";
+    static File mDir;
+    static FileOutputStream mFOS;
+
+    private static final String CREATE_SESSION_MESSAGE = "CreateSessionMessage: ";
 
     private static final String MESSAGE_1 = "YOUR MESSAGE";
 
@@ -52,6 +62,9 @@ public class ActivityCreateSession extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
+    private SharedPreference sharedPreference;
+    Activity context = this;
+
     /**
      * The {@link ViewPager} that will host the section contents.
      */
@@ -60,7 +73,7 @@ public class ActivityCreateSession extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_session_management);
+        setContentView(R.layout.management_create_session);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,42 +93,54 @@ public class ActivityCreateSession extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
+                SharedPreference sharedPreference = new SharedPreference();
+
                 EditText ssnEditText = (EditText) findViewById(R.id.session_edit_text);
                 mSessionName = ssnEditText.getText().toString();
-                Log.i(mLogMessage, "Session Name: " + mSessionName);
+                // saveString the shared preferences
+                sharedPreference.saveString(context, SharedPreference.SESSION_NAME_KEY, mSessionName);
+                Log.i(CREATE_SESSION_MESSAGE, "Session Name: " + mSessionName);
 
                 EditText locEditText = (EditText) findViewById(R.id.location_edit_text);
                 mLocation = locEditText.getText().toString();
-                Log.i(mLogMessage, "Location: " + mLocation);
+                sharedPreference.saveString(context, SharedPreference.LOCATION_ID_KEY, mLocation);
+                Log.i(CREATE_SESSION_MESSAGE, "Location: " + mLocation);
 
                 TextView fname = (TextView) findViewById(R.id.file_name_text_view);
                 mFileName = mLocation + "_" + mSessionName;
                 fname.setText(mFileName);
-                Log.i(mLogMessage, "File Name will be: " + mFileName);
+                sharedPreference.saveString(context, SharedPreference.FILE_NAME_KEY, mFileName);
+                Log.i(CREATE_SESSION_MESSAGE, "File Name will be: " + mFileName);
 
                 EditText cameraID = (EditText) findViewById(R.id.camera_id);
                 mCameraID = cameraID.getText().toString();
-                Log.i(mLogMessage, "Camera ID: " + mCameraID);
+                sharedPreference.saveString(context, SharedPreference.CAMERA_ID_KEY, mCameraID);
+                Log.i(CREATE_SESSION_MESSAGE, "Camera ID: " + mCameraID);
 
                 EditText cameraTimeZone = (EditText) findViewById(R.id.camera_time_zone);
                 mCameraTZ = cameraTimeZone.getText().toString();
-                Log.i(mLogMessage, "Camera TimeZone: " + mCameraTZ);
+                sharedPreference.saveString(context, SharedPreference.CAMERA_TIME_ZONE_KEY, mCameraTZ);
+                Log.i(CREATE_SESSION_MESSAGE, "Camera TimeZone: " + mCameraTZ);
 
                 CheckBox cameraChkBx = (CheckBox) findViewById(R.id.camera_dst_set);
                 mCameraDST = cameraChkBx.isChecked();
-                Log.i(mLogMessage, "Camera DST set: " + mCameraDST.toString());
+                sharedPreference.saveBoolean(context, SharedPreference.CAMERA_DST_KEY, mCameraDST);
+                Log.i(CREATE_SESSION_MESSAGE, "Camera DST set: " + mCameraDST.toString());
 
                 EditText androidID = (EditText) findViewById(R.id.android_id);
                 mAndroidID = androidID.getText().toString();
-                Log.i(mLogMessage, "Android Device ID: " + mAndroidID);
+                sharedPreference.saveString(context, SharedPreference.ANDROID_ID_KEY, mAndroidID);
+                Log.i(CREATE_SESSION_MESSAGE, "Android Device ID: " + mAndroidID);
 
                 EditText androidTimeZone = (EditText) findViewById(R.id.android_time_zone);
                 mAndroidTZ = androidTimeZone.getText().toString();
-                Log.i(mLogMessage, "Android Device TimeZone: " + mAndroidTZ);
+                sharedPreference.saveString(context, SharedPreference.ANDROID_TIME_ZONE_KEY, mAndroidTZ);
+                Log.i(CREATE_SESSION_MESSAGE, "Android Device TimeZone: " + mAndroidTZ);
 
                 CheckBox tabletChkBx = (CheckBox) findViewById(R.id.android_dst_set);
                 mAndroidDST = tabletChkBx.isChecked();
-                Log.i(mLogMessage, "Android DST set: " + mAndroidDST.toString());
+                sharedPreference.saveBoolean(context, SharedPreference.ANDROID_DST_KEY, mAndroidDST);
+                Log.i(CREATE_SESSION_MESSAGE, "Android DST set: " + mAndroidDST.toString());
 
                 Toast toast = Toast.makeText(ActivityCreateSession.this, "File name is: " + mFileName, Toast.LENGTH_LONG);
                 toast.show();
@@ -148,6 +173,13 @@ public class ActivityCreateSession extends AppCompatActivity {
                 //          https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=android%20manifest%20multiple%20parent%20activities
                 //          http://developer.android.com/design/patterns/navigation.html
                 //          http://stackoverflow.com/questions/23475788/how-to-set-multiple-parent-activities-for-using-android-back-button
+
+                mDir = getFilesDir();
+                String path = mDir.getAbsolutePath();
+                toast = Toast.makeText(ActivityCreateSession.this, "The current path is: " + path, Toast.LENGTH_LONG);
+                toast.show();
+
+                // mFOS = FileOutputStream.
 
             }
         });
@@ -206,7 +238,7 @@ public class ActivityCreateSession extends AppCompatActivity {
         @Override
         public View onCreateView (LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_session_management, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_management_create_session, container, false);
 
             return rootView;
         }

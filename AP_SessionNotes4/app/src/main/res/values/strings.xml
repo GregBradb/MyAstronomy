@@ -38,17 +38,16 @@
     <string name="android_id_hint">TAB1</string>
     <string name="android_device_time_zone_hint">GMT - 8:00</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_activity_image_details">ActivityImageDetails</string>
     <string name="interference_text">Interference</string>
-    <string name="image_details_text">Image Details</string>
+    <string name="image_type_text">Image Type</string>
     <string name="focus_text">Focus</string>
     <string name="polar_align_text">Polar Alignment</string>
     <string name="dark_frame_text">Dark Frames</string>
     <string name="light_frame_text">Light Frames</string>
     <string name="cal_text">Calibration</string>
     <string name="other_text">Other</string>
-    <string name="vibe_text">Vibration</string>
+    <string name="vibe_text">Bump / Wind Gust</string>
     <string name="flashlight_text">Flashlight</string>
     <string name="car_text">Car Lights</string>
     <string name="airplane_text">Airplane</string>
@@ -90,5 +89,11 @@
     <string name="miscPopToastForClose">Should probably just pop a \'Toast\' message that the current session is closed.</string>
     <string name="title_activity_i_delete_session">iDeleteSession</string>
     <string name="delete_edit_text">Will need a selection option for a list of files for sessions to delete.</string>
+    <string name="bump_or_gust_txt">Bump, wind gust or other vibration.</string>
+    <string name="flashlight">Flashlight</string>
+    <string name="car_lights">Car Lights</string>
+    <string name="airplane">Airplane</string>
+    <string name="satellite">Satellite</string>
+    <string name="meteor">Meteor</string>
 
 </resources>
