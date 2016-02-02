@@ -122,6 +122,16 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
+                <CheckBox
+                    android:id="@+id/chkBxVibration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="2"
+                    android:background="@color/astrophoto_check_box"
+                    android:text="@string/vibe_text"
+                    android:textColor="@color/astrophoto_dark_text" />
+<!--
                 <Button
                     android:id="@+id/btnVibration"
                     android:layout_width="wrap_content"
@@ -131,6 +141,7 @@
                     android:background="@color/astrophoto_check_box"
                     android:text="@string/vibe_text"
                     android:textColor="@color/astrophoto_dark_text" />
+-->
 
             </TableRow>
 
@@ -138,6 +149,16 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
+                <CheckBox
+                    android:id="@+id/chkBxFlashlight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="2"
+                    android:background="@color/astrophoto_check_box"
+                    android:text="@string/flashlight_text"
+                    android:textColor="@color/astrophoto_dark_text" />
+<!--
                 <Button
                     android:id="@+id/btnFlashlight"
                     android:layout_width="wrap_content"
@@ -147,13 +168,23 @@
                     android:background="@color/astrophoto_check_box"
                     android:text="@string/flashlight_text"
                     android:textColor="@color/astrophoto_dark_text" />
-
+-->
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
+                <CheckBox
+                    android:id="@+id/chkBxCarLights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="2"
+                    android:background="@color/astrophoto_check_box"
+                    android:text="@string/car_text"
+                    android:textColor="@color/astrophoto_dark_text" />
+<!--
                 <Button
                     android:id="@+id/btnCarLights"
                     android:layout_width="wrap_content"
@@ -163,13 +194,23 @@
                     android:background="@color/astrophoto_check_box"
                     android:text="@string/car_text"
                     android:textColor="@color/astrophoto_dark_text" />
-
+-->
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
+                <CheckBox
+                    android:id="@+id/chkBxAirplane"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="2"
+                    android:background="@color/astrophoto_check_box"
+                    android:text="@string/airplane_text"
+                    android:textColor="@color/astrophoto_dark_text" />
+<!--
                 <Button
                     android:id="@+id/btnAirplane"
                     android:layout_width="wrap_content"
@@ -179,13 +220,23 @@
                     android:background="@color/astrophoto_check_box"
                     android:text="@string/airplane_text"
                     android:textColor="@color/astrophoto_dark_text" />
-
+-->
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
+                <CheckBox
+                    android:id="@+id/chkBxSatellite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="2"
+                    android:background="@color/astrophoto_check_box"
+                    android:text="@string/satellite_text"
+                    android:textColor="@color/astrophoto_dark_text" />
+<!--
                 <Button
                     android:id="@+id/btnSatellite"
                     android:layout_width="wrap_content"
@@ -195,13 +246,23 @@
                     android:background="@color/astrophoto_check_box"
                     android:text="@string/satellite_text"
                     android:textColor="@color/astrophoto_dark_text" />
-
+-->
             </TableRow>
 
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
 
+                <CheckBox
+                    android:id="@+id/chkBxMeteor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="2"
+                    android:background="@color/astrophoto_check_box"
+                    android:text="@string/meteor_text"
+                    android:textColor="@color/astrophoto_dark_text" />
+<!--
                 <Button
                     android:id="@+id/btnMeteor"
                     android:layout_width="wrap_content"
@@ -211,7 +272,7 @@
                     android:background="@color/astrophoto_check_box"
                     android:text="@string/meteor_text"
                     android:textColor="@color/astrophoto_dark_text" />
-
+-->
             </TableRow>
         </TableLayout>
 

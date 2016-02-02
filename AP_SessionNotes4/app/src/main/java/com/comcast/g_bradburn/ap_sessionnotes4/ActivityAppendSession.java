@@ -69,7 +69,7 @@ public class ActivityAppendSession extends AppCompatActivity {
                 String mExpTime = expTimeEdtTxt.getText().toString();
                 int myExpTime;
                 if (mExpTime.equals("")) {
-                    myExpTime= 0;
+                    myExpTime = 0;
                     mExpTime = "Exposure time not set.";
                 } else {
                     myExpTime = Integer.parseInt(mExpTime);
@@ -83,7 +83,7 @@ public class ActivityAppendSession extends AppCompatActivity {
                 String mISO = isoEdtTxt.getText().toString();
                 int myISO;
                 if (mISO.equals("")) {
-                    myISO= -999;
+                    myISO = -999;
                     mISO = "ISO not set.";
                 } else {
                     myISO = Integer.parseInt(mISO);
@@ -94,13 +94,10 @@ public class ActivityAppendSession extends AppCompatActivity {
 
                 String lckup = " false.";
                 CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
-                if (mirrorLockupChkBx.isChecked())
-                {
+                if (mirrorLockupChkBx.isChecked()) {
                     mLockup = true;
                     lckup = " true.";
-                }
-                else
-                {
+                } else {
                     mLockup = false;
                 }
                 sharedPreference.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
@@ -115,13 +112,10 @@ public class ActivityAppendSession extends AppCompatActivity {
 
                         String lckup = " false.";
                         CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
-                        if (mirrorLockupChkBx.isChecked())
-                        {
+                        if (mirrorLockupChkBx.isChecked()) {
                             mLockup = true;
                             lckup = " true.";
-                        }
-                        else
-                        {
+                        } else {
                             mLockup = false;
                         }
                         SharedPreference sharedPreference2 = new SharedPreference();
@@ -196,8 +190,20 @@ public class ActivityAppendSession extends AppCompatActivity {
 
             }
         });
+//
+//        Button vibBtn = (Button) findViewById(R.id.btnVibration);
+//        vibBtn.setOnClickListener (new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                sharedPreference = new SharedPreference();
+//
+//                sharedPreference.saveString(context, SharedPreference.VIBRATION_KEY, getString(R.string.bump_or_gust_txt));
+//                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.bump_or_gust_txt), Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//        });
 
-        Button vibBtn = (Button) findViewById(R.id.btnVibration);
+        Button vibBtn = (Button) findViewById(R.id.chkBxVibration);
         vibBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -209,7 +215,19 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
-        Button flashlightBtn = (Button) findViewById(R.id.btnFlashlight);
+//        Button flashlightBtn = (Button) findViewById(R.id.btnFlashlight);
+//        flashlightBtn.setOnClickListener (new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                sharedPreference = new SharedPreference();
+//
+//                sharedPreference.saveString(context, SharedPreference.FLASHLIGHT_KEY, getString(R.string.flashlight));
+//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.flashlight, Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//        });
+
+        Button flashlightBtn = (Button) findViewById(R.id.chkBxFlashlight);
         flashlightBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -221,7 +239,19 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
-        Button carLightsBtn = (Button) findViewById(R.id.btnCarLights);
+//        Button carLightsBtn = (Button) findViewById(R.id.btnCarLights);
+//        carLightsBtn.setOnClickListener (new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                sharedPreference = new SharedPreference();
+//
+//                sharedPreference.saveString(context, SharedPreference.CAR_LIGHTS_KEY, getString(R.string.car_lights));
+//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.car_lights, Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//        });
+
+        Button carLightsBtn = (Button) findViewById(R.id.chkBxCarLights);
         carLightsBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -233,7 +263,19 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
-        Button airplaneBtn = (Button) findViewById(R.id.btnAirplane);
+//        Button airplaneBtn = (Button) findViewById(R.id.btnAirplane);
+//        airplaneBtn.setOnClickListener (new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                sharedPreference = new SharedPreference();
+//
+//                sharedPreference.saveString(context, SharedPreference.AIRPLANE_KEY, getString(R.string.airplane));
+//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.airplane, Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//        });
+
+        Button airplaneBtn = (Button) findViewById(R.id.chkBxAirplane);
         airplaneBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -245,7 +287,19 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
-        Button satelliteBtn = (Button) findViewById(R.id.btnSatellite);
+//        Button satelliteBtn = (Button) findViewById(R.id.btnSatellite);
+//        satelliteBtn.setOnClickListener (new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                sharedPreference = new SharedPreference();
+//
+//                sharedPreference.saveString(context, SharedPreference.SATELLITE_KEY, getString(R.string.satellite));
+//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.satellite, Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//        });
+
+        Button satelliteBtn = (Button) findViewById(R.id.chkBxSatellite);
         satelliteBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -257,7 +311,19 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
-        Button meteorBtn = (Button) findViewById(R.id.btnMeteor);
+//        Button meteorBtn = (Button) findViewById(R.id.btnMeteor);
+//        meteorBtn.setOnClickListener (new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                sharedPreference = new SharedPreference();
+//
+//                sharedPreference.saveString(context, SharedPreference.METEOR_KEY, getString(R.string.meteor));
+//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.meteor, Toast.LENGTH_SHORT);
+//                toast.show();
+//            }
+//        });
+
+        Button meteorBtn = (Button) findViewById(R.id.chkBxMeteor);
         meteorBtn.setOnClickListener (new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -268,5 +334,6 @@ public class ActivityAppendSession extends AppCompatActivity {
                 toast.show();
             }
         });
+
     }
 }
