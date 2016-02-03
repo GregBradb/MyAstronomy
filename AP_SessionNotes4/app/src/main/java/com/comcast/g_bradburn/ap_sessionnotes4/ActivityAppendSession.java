@@ -7,7 +7,6 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -36,7 +35,7 @@ public class ActivityAppendSession extends AppCompatActivity {
     int mBs = 4;
     int mFlt = 5;
     int mCal = 6;
-    int mOthr = 7;
+    int mOthrRb = 7;
 
     String mImageType;
     int mExpTime;
@@ -44,6 +43,8 @@ public class ActivityAppendSession extends AppCompatActivity {
     int mISO;
     Boolean mLockup;
     String mTargetID;
+
+    Boolean mVib, mCld, mFlshLght, mCrLghts, mAirpln, mStllte, mOthrInt, mMtr;
 
     private SharedPreference sharedPreference;
     Activity context = this;
@@ -177,7 +178,7 @@ public class ActivityAppendSession extends AppCompatActivity {
                         break;
                     case R.id.radioButtonOther:
                         if (checked)
-                            mImageType = mImageTypes[mOthr];
+                            mImageType = mImageTypes[mOthrRb];
                         break;
                 }
                 sharedPreference = new SharedPreference();
@@ -190,150 +191,168 @@ public class ActivityAppendSession extends AppCompatActivity {
 
             }
         });
-//
-//        Button vibBtn = (Button) findViewById(R.id.btnVibration);
-//        vibBtn.setOnClickListener (new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                sharedPreference = new SharedPreference();
-//
-//                sharedPreference.saveString(context, SharedPreference.VIBRATION_KEY, getString(R.string.bump_or_gust_txt));
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.bump_or_gust_txt), Toast.LENGTH_SHORT);
-//                toast.show();
-//            }
-//        });
 
-        Button vibBtn = (Button) findViewById(R.id.chkBxVibration);
-        vibBtn.setOnClickListener (new View.OnClickListener(){
+        CheckBox vibChkBx = (CheckBox) findViewById(R.id.chkBxVibration);
+        vibChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sharedPreference = new SharedPreference();
+                String vib;
+                CheckBox vibChkBx = (CheckBox) findViewById(R.id.chkBxVibration);
+                if (vibChkBx.isChecked()) {
+                    mVib = true;
+                    vib = " true.";
+                } else {
+                    mVib = false;
+                    vib = " false.";
+                }
 
-                sharedPreference.saveString(context, SharedPreference.VIBRATION_KEY, getString(R.string.bump_or_gust_txt));
-                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.bump_or_gust_txt), Toast.LENGTH_SHORT);
+                sharedPreference = new SharedPreference();
+                sharedPreference.saveBoolean(context, SharedPreference.VIBRATION_KEY, vibChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.vibration_text) + vib, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
-//        Button flashlightBtn = (Button) findViewById(R.id.btnFlashlight);
-//        flashlightBtn.setOnClickListener (new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                sharedPreference = new SharedPreference();
-//
-//                sharedPreference.saveString(context, SharedPreference.FLASHLIGHT_KEY, getString(R.string.flashlight));
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.flashlight, Toast.LENGTH_SHORT);
-//                toast.show();
-//            }
-//        });
-
-        Button flashlightBtn = (Button) findViewById(R.id.chkBxFlashlight);
-        flashlightBtn.setOnClickListener (new View.OnClickListener(){
+        CheckBox cloudChkBx = (CheckBox) findViewById(R.id.chkBxCloud);
+        cloudChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sharedPreference = new SharedPreference();
+                String cloud;
+                CheckBox cloudChkBx = (CheckBox) findViewById(R.id.chkBxCloud);
+                if (cloudChkBx.isChecked()) {
+                    mCld = true;
+                    cloud = " true.";
+                } else {
+                    mCld = false;
+                    cloud = " false.";
+                }
 
-                sharedPreference.saveString(context, SharedPreference.FLASHLIGHT_KEY, getString(R.string.flashlight));
-                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.flashlight, Toast.LENGTH_SHORT);
+                sharedPreference = new SharedPreference();
+                sharedPreference.saveBoolean(context, SharedPreference.CLOUD_KEY, cloudChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.cloud_text) + cloud, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
-//        Button carLightsBtn = (Button) findViewById(R.id.btnCarLights);
-//        carLightsBtn.setOnClickListener (new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                sharedPreference = new SharedPreference();
-//
-//                sharedPreference.saveString(context, SharedPreference.CAR_LIGHTS_KEY, getString(R.string.car_lights));
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.car_lights, Toast.LENGTH_SHORT);
-//                toast.show();
-//            }
-//        });
-
-        Button carLightsBtn = (Button) findViewById(R.id.chkBxCarLights);
-        carLightsBtn.setOnClickListener (new View.OnClickListener(){
+        CheckBox flashlightChkBx = (CheckBox) findViewById(R.id.chkBxFlashlight);
+        flashlightChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                sharedPreference = new SharedPreference();
+                String flashlight;
+                CheckBox flashlightChkBx = (CheckBox) findViewById(R.id.chkBxFlashlight);
+                if (flashlightChkBx.isChecked()) {
+                    mFlshLght = true;
+                    flashlight = " true.";
+                } else {
+                    mFlshLght = false;
+                    flashlight = " false.";
+                }
 
-                sharedPreference.saveString(context, SharedPreference.CAR_LIGHTS_KEY, getString(R.string.car_lights));
-                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.car_lights, Toast.LENGTH_SHORT);
+                sharedPreference = new SharedPreference();
+                sharedPreference.saveBoolean(context, SharedPreference.FLASHLIGHT_KEY, flashlightChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.flashlight_text) + flashlight, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
-//        Button airplaneBtn = (Button) findViewById(R.id.btnAirplane);
-//        airplaneBtn.setOnClickListener (new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                sharedPreference = new SharedPreference();
-//
-//                sharedPreference.saveString(context, SharedPreference.AIRPLANE_KEY, getString(R.string.airplane));
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.airplane, Toast.LENGTH_SHORT);
-//                toast.show();
-//            }
-//        });
-
-        Button airplaneBtn = (Button) findViewById(R.id.chkBxAirplane);
-        airplaneBtn.setOnClickListener (new View.OnClickListener(){
+        CheckBox carLightsChkBx = (CheckBox) findViewById(R.id.chkBxCarLights);
+        carLightsChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String carLights;
+                CheckBox carLightsChkBx = (CheckBox) findViewById(R.id.chkBxCarLights);
+                if (carLightsChkBx.isChecked()) {
+                    mCrLghts = true;
+                    carLights = " true.";
+                } else {
+                    mCrLghts = false;
+                    carLights = " false.";
+                }
                 sharedPreference = new SharedPreference();
-
-                sharedPreference.saveString(context, SharedPreference.AIRPLANE_KEY, getString(R.string.airplane));
-                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.airplane, Toast.LENGTH_SHORT);
+                sharedPreference.saveBoolean(context, SharedPreference.CAR_LIGHTS_KEY, carLightsChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.car_text) + carLights, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
-//        Button satelliteBtn = (Button) findViewById(R.id.btnSatellite);
-//        satelliteBtn.setOnClickListener (new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                sharedPreference = new SharedPreference();
-//
-//                sharedPreference.saveString(context, SharedPreference.SATELLITE_KEY, getString(R.string.satellite));
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.satellite, Toast.LENGTH_SHORT);
-//                toast.show();
-//            }
-//        });
-
-        Button satelliteBtn = (Button) findViewById(R.id.chkBxSatellite);
-        satelliteBtn.setOnClickListener (new View.OnClickListener(){
+        CheckBox airplaneChkBx = (CheckBox) findViewById(R.id.chkBxAirplane);
+        airplaneChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String airplane;
+                CheckBox airplaneChkBx = (CheckBox) findViewById(R.id.chkBxAirplane);
+                if (airplaneChkBx.isChecked()) {
+                    mAirpln = true;
+                    airplane = " true.";
+                } else {
+                    mAirpln = false;
+                    airplane = " false.";
+                }
                 sharedPreference = new SharedPreference();
-
-                sharedPreference.saveString(context, SharedPreference.SATELLITE_KEY, getString(R.string.satellite));
-                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.satellite, Toast.LENGTH_SHORT);
+                sharedPreference.saveBoolean(context, SharedPreference.AIRPLANE_KEY, airplaneChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.airplane_text) + airplane, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
-//        Button meteorBtn = (Button) findViewById(R.id.btnMeteor);
-//        meteorBtn.setOnClickListener (new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                sharedPreference = new SharedPreference();
-//
-//                sharedPreference.saveString(context, SharedPreference.METEOR_KEY, getString(R.string.meteor));
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.meteor, Toast.LENGTH_SHORT);
-//                toast.show();
-//            }
-//        });
-
-        Button meteorBtn = (Button) findViewById(R.id.chkBxMeteor);
-        meteorBtn.setOnClickListener (new View.OnClickListener(){
+        CheckBox satelliteChkBx = (CheckBox) findViewById(R.id.chkBxSatellite);
+        satelliteChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String satellite;
+                CheckBox satelliteChkBx = (CheckBox) findViewById(R.id.chkBxSatellite);
+                if (satelliteChkBx.isChecked()) {
+                    mStllte = true;
+                    satellite = " true.";
+                } else {
+                    mStllte = false;
+                    satellite = " false.";
+                }
                 sharedPreference = new SharedPreference();
-
-                sharedPreference.saveString(context, SharedPreference.METEOR_KEY, getString(R.string.meteor));
-                Toast toast = Toast.makeText(ActivityAppendSession.this, R.string.meteor, Toast.LENGTH_SHORT);
+                sharedPreference.saveBoolean(context, SharedPreference.SATELLITE_KEY, satelliteChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.satellite_text) + satellite, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
+        CheckBox otherChkBx = (CheckBox) findViewById(R.id.chkBxOtherInterference);
+        otherChkBx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String other_interference;
+                CheckBox otherChkBx = (CheckBox) findViewById(R.id.chkBxOtherInterference);
+                if (otherChkBx.isChecked()) {
+                    mOthrInt = true;
+                    other_interference = " true.";
+                } else {
+                    mOthrInt = false;
+                    other_interference = " false.";
+                }
+                sharedPreference = new SharedPreference();
+                sharedPreference.saveBoolean(context, SharedPreference.OTHER_INTERFERENCE_KEY, otherChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.other_interference_text) + other_interference, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        CheckBox meteorChkBx = (CheckBox) findViewById(R.id.chkBxMeteor);
+        meteorChkBx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String meteor;
+                CheckBox meteorChkBx = (CheckBox) findViewById(R.id.chkBxMeteor);
+                if (meteorChkBx.isChecked()) {
+                    mMtr = true;
+                    meteor = " true.";
+                } else {
+                    mMtr = false;
+                    meteor = " false.";
+                }
+                sharedPreference = new SharedPreference();
+                sharedPreference.saveBoolean(context, SharedPreference.CAR_LIGHTS_KEY, meteorChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.meteor_text) + meteor, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
     }
 }

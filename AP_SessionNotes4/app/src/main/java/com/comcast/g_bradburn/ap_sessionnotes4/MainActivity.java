@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -44,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
 
                 // Read and display the shared preferences
                 SharedPreference sharedPreference = new SharedPreference();
@@ -74,8 +73,7 @@ public class MainActivity extends AppCompatActivity {
                 Boolean tempBool = sharedPreference.getBooleanValue(context, SharedPreference.CAMERA_DST_KEY);
                 if (tempBool) {
                     myChkBx = "is checked";
-                }
-                else {
+                } else {
                     myChkBx = "is NOT checked";
                 }
                 toast = Toast.makeText(context, "Camera DST: " + myChkBx, Toast.LENGTH_SHORT);
@@ -92,8 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 tempBool = sharedPreference.getBooleanValue(context, SharedPreference.ANDROID_DST_KEY);
                 if (tempBool) {
                     myChkBx = "is checked";
-                }
-                else {
+                } else {
                     myChkBx = "is NOT checked";
                 }
                 toast = Toast.makeText(context, "Android DST: " + myChkBx, Toast.LENGTH_SHORT);
@@ -104,14 +101,13 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
 
                 tempInt = sharedPreference.getIntValue(context, SharedPreference.ISO_KEY);
-                toast = Toast.makeText(context, "Exposure Time: " + tempInt + " ms", Toast.LENGTH_SHORT);
+                toast = Toast.makeText(context, "ISO: " + tempInt, Toast.LENGTH_SHORT);
                 toast.show();
 
                 tempBool = sharedPreference.getBooleanValue(context, SharedPreference.MIRROR_LOCKUP_KEY);
                 if (tempBool) {
                     myChkBx = "is checked";
-                }
-                else {
+                } else {
                     myChkBx = "is NOT checked";
                 }
                 toast = Toast.makeText(context, "Mirror LockUp: " + myChkBx, Toast.LENGTH_SHORT);
@@ -125,29 +121,89 @@ public class MainActivity extends AppCompatActivity {
                 toast = Toast.makeText(context, "Image Type: " + temp, Toast.LENGTH_SHORT);
                 toast.show();
 
-                temp = sharedPreference.getStringValue(context, SharedPreference.VIBRATION_KEY);
-                toast = Toast.makeText(context, "Vibration or Shake During Exposure", Toast.LENGTH_SHORT);
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.VIBRATION_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Bump / Wind Gust: " + myChkBx, Toast.LENGTH_SHORT);
                 toast.show();
 
-                temp = sharedPreference.getStringValue(context, SharedPreference.FLASHLIGHT_KEY);
-                toast = Toast.makeText(context, "Flashlight During Exposure", Toast.LENGTH_SHORT);
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.CLOUD_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Cloud: " + myChkBx, Toast.LENGTH_SHORT);
                 toast.show();
 
-                temp = sharedPreference.getStringValue(context, SharedPreference.CAR_LIGHTS_KEY);
-                toast = Toast.makeText(context, "Car Lights During Exposure", Toast.LENGTH_SHORT);
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.CLOUD_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Cloud: " + myChkBx, Toast.LENGTH_SHORT);
                 toast.show();
 
-                temp = sharedPreference.getStringValue(context, SharedPreference.AIRPLANE_KEY);
-                toast = Toast.makeText(context, "Airplane Lights During Exposure", Toast.LENGTH_SHORT);
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.FLASHLIGHT_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Flashlight: " + myChkBx, Toast.LENGTH_SHORT);
                 toast.show();
 
-                temp = sharedPreference.getStringValue(context, SharedPreference.SATELLITE_KEY);
-                toast = Toast.makeText(context, "Satellite During Exposure", Toast.LENGTH_SHORT);
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.CAR_LIGHTS_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Car Lights: " + myChkBx, Toast.LENGTH_SHORT);
                 toast.show();
 
-                temp = sharedPreference.getStringValue(context, SharedPreference.METEOR_KEY);
-                toast = Toast.makeText(context, "Meteor During Exposure", Toast.LENGTH_SHORT);
-                toast.show();            }
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.AIRPLANE_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Airplane: " + myChkBx, Toast.LENGTH_SHORT);
+                toast.show();
+
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.SATELLITE_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Satellite: " + myChkBx, Toast.LENGTH_SHORT);
+                toast.show();
+
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.OTHER_INTERFERENCE_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Other: " + myChkBx, Toast.LENGTH_SHORT);
+                toast.show();
+
+                tempBool = sharedPreference.getBooleanValue(context, SharedPreference.METEOR_KEY);
+                if (tempBool) {
+                    myChkBx = "is checked";
+                } else {
+                    myChkBx = "is NOT checked";
+                }
+                toast = Toast.makeText(context, "Meteor: " + myChkBx, Toast.LENGTH_SHORT);
+                toast.show();
+
+
+            }
         });
 
         Button create_btn = (Button) findViewById(R.id.create_button);

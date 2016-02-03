@@ -47,15 +47,18 @@
     <string name="light_frame_text">Light Frames</string>
     <string name="cal_text">Calibration</string>
     <string name="other_text">Other</string>
-    <string name="vibe_text">Bump / Wind Gust</string>
+    <string name="vibration_text">Bump, wind gust or other vibration: </string>
+    <string name="vibration_text_short">Bump / Wind Gust</string>
+    <string name="cloud_text">Cloud</string>
     <string name="flashlight_text">Flashlight</string>
     <string name="car_text">Car Lights</string>
     <string name="airplane_text">Airplane</string>
     <string name="satellite_text">Satellite</string>
+    <string name="other_interference_text">Other Interference</string>
     <string name="meteor_text">Meteor</string>
     <string name="camera_settings_txt">Camera Settings</string>
     <string name="exposure_time_text">Exposure Time</string>
-    <string name="ms_text">ms</string>
+    <string name="exp_time_units_text">ms</string>
     <string name="iso_text">ISO</string>
     <string name="lockup_text">Mirror Lock-Up</string>
     <string name="target_text">Target ID</string>
@@ -66,7 +69,7 @@
     <string name="android_time_zone_hint">GMT - 8:00</string>
     <string name="bias_text">Bias</string>
     <string name="iso_hint">1600</string>
-    <string name="target_id_hint">M31-Andromeda Galaxy</string>
+    <string name="target_id_hint">For example, M31</string>
 
 
     <!-- activity_review_session -->
@@ -89,11 +92,5 @@
     <string name="miscPopToastForClose">Should probably just pop a \'Toast\' message that the current session is closed.</string>
     <string name="title_activity_i_delete_session">iDeleteSession</string>
     <string name="delete_edit_text">Will need a selection option for a list of files for sessions to delete.</string>
-    <string name="bump_or_gust_txt">Bump, wind gust or other vibration.</string>
-    <string name="flashlight">Flashlight</string>
-    <string name="car_lights">Car Lights</string>
-    <string name="airplane">Airplane</string>
-    <string name="satellite">Satellite</string>
-    <string name="meteor">Meteor</string>
 
 </resources>

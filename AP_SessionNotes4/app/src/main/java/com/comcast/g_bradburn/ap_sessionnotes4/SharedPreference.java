@@ -24,10 +24,12 @@ public class SharedPreference {
     public static final String TARGET_ID_KEY = "target_id";
     public static final String IMAGE_TYPE_KEY = "image_type";
     public static final String VIBRATION_KEY = "bump_or_wind_gust";
+    public static final String CLOUD_KEY = "cloud";
     public static final String FLASHLIGHT_KEY = "flashlight";
     public static final String CAR_LIGHTS_KEY = "car_lights";
     public static final String AIRPLANE_KEY = "airplane";
     public static final String SATELLITE_KEY = "satellite";
+    public static final String OTHER_INTERFERENCE_KEY = "other_interference";
     public static final String METEOR_KEY = "meteor";
 
     //    private SharedPreferences session_state = PreferenceManager.getDefaultSharedPreferences(this);
