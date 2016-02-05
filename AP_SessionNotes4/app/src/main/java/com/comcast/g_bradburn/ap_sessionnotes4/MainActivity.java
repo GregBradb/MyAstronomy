@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
 
                 // Read and display the shared preferences
                 SharedPreference sharedPreference = new SharedPreference();
@@ -213,7 +211,7 @@ public class MainActivity extends AppCompatActivity {
                 // TODO:  remove following temporary mFOS declaration
                 mDir = getFilesDir();
                 String path = mDir.getAbsolutePath();
-                Toast toast = Toast.makeText(MainActivity.this, "The current path is: " + path, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(MainActivity.this, "The current path is: " + path, Toast.LENGTH_SHORT);
                 toast.show();
                 try {
                     mFOS = openFileOutput(fileName, MODE_PRIVATE);
