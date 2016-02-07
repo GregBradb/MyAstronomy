@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -25,21 +26,21 @@ public class ActivityAppendSession extends AppCompatActivity {
     //          call an intermediate activity which prompts for the existing session's name and then
     //          enters this activity.
 
-    String[] mImageTypes = {"NO IMAGETYPE SELECTION", "POLAR_ALIGN", "FOCUS", "LIGHTS",
+    String[] mImageTypes = {"POLAR_ALIGN", "FOCUS", "LIGHTS",
             "DARKS", "BIAS", "FLAT", "CALIBRATION", "OTHER"};
-    int mDeflt = 0;     // this index will probably never be explicitly used.  It is just making it clear that the first element is reserved for the default case
-    int mPolAln = 1;
-    int mFcs = 2;
-    int mLght = 3;
-    int mDrk = 4;
-    int mBs = 5;
-    int mFlt = 6;
-    int mCal = 7;
-    int mOthrRb = 8;
+    int mPolAln = 0;
+    int mFcs = 1;
+    int mLght = 2;
+    int mDrk = 3;
+    int mBs = 4;
+    int mFlt = 5;
+    int mCal = 6;
+    int mOthrRb = 7;
 
-    String mImageType = "not initialized";
-    int myExpTime;
-    int myISO;
+    String mImageType;
+    int mExpTime;
+    String mExpTimeUnits;
+    int mISO;
     Boolean mLockup;
     String mTargetID;
 
@@ -55,22 +56,19 @@ public class ActivityAppendSession extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // TODO:  Can I position the floating action button closer to the text inputs so it seems related to them?
-        // TODO:  Should have listeners for the txt fields too so the FAB can be deleted.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Save Text Values to Shared Preferences", Snackbar.LENGTH_SHORT)
+                Snackbar.make(view, "Save", Snackbar.LENGTH_SHORT)
                         .setAction("Action", null).show();
 
                 // Read and display the shared preferences
                 sharedPreference = new SharedPreference();
 
-                Toast toast;
-
                 EditText expTimeEdtTxt = (EditText) findViewById(R.id.expTimeEditTxt);
                 String mExpTime = expTimeEdtTxt.getText().toString();
+                int myExpTime;
                 if (mExpTime.equals("")) {
                     myExpTime = 0;
                     mExpTime = "Exposure time not set.";
@@ -79,11 +77,12 @@ public class ActivityAppendSession extends AppCompatActivity {
                 }
                 // saveString the shared preferences
                 sharedPreference.saveInt(context, SharedPreference.EXPOSURE_TIME_KEY, myExpTime);
-                toast = Toast.makeText(ActivityAppendSession.this, mExpTime, Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, mExpTime, Toast.LENGTH_SHORT);
                 toast.show();
 
                 EditText isoEdtTxt = (EditText) findViewById(R.id.editISO);
                 String mISO = isoEdtTxt.getText().toString();
+                int myISO;
                 if (mISO.equals("")) {
                     myISO = -999;
                     mISO = "ISO not set.";
@@ -94,75 +93,6 @@ public class ActivityAppendSession extends AppCompatActivity {
                 toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_SHORT);
                 toast.show();
 
-                EditText targetEdtTxt = (EditText) findViewById(R.id.editTargetID);
-                mTargetID = targetEdtTxt.getText().toString();
-                sharedPreference.saveString(context, SharedPreference.TARGET_ID_KEY, mTargetID);
-                toast = Toast.makeText(ActivityAppendSession.this, mTargetID, Toast.LENGTH_SHORT);
-                toast.show();
-
-//                There is no need to do the lockup check here as it will be captured to the shared preferences by the listener
-//                String lckup = " false.";
-//                CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
-//                if (mirrorLockupChkBx.isChecked()) {
-//                    mLockup = true;
-//                    lckup = " true.";
-//                } else {
-//                    mLockup = false;
-//                }
-//                sharedPreference.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
-//                toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_SHORT);
-//                toast.show();
-
-//                There is no need to do the RadioGroup check here as it will be captured to the shared preferences by the listener
-//                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.imageTypeRadioGroup);
-//                // is anything checked?
-//
-//                int selectedId = radioGroup.getCheckedRadioButtonId();
-//
-//                // check which button is checked
-//                switch (selectedId) {
-//                    case R.id.radioButtonPolarAlign:
-//                        mImageType = mImageTypes[mPolAln];
-//                        break;
-//                    case R.id.radioButtonFocus:
-//                        mImageType = mImageTypes[mFcs];
-//                        break;
-//                    case R.id.radioButtonLights:
-//                        mImageType = mImageTypes[mLght];
-//                        break;
-//                    case R.id.radioButtonDarks:
-//                        mImageType = mImageTypes[mDrk];
-//                        break;
-//                    case R.id.radioButtonBias:
-//                        mImageType = mImageTypes[mBs];
-//                        break;
-//                    case R.id.radioButtonFlat:
-//                        mImageType = mImageTypes[mFlt];
-//                        break;
-//                    case R.id.radioButtonCalibration:
-//                        mImageType = mImageTypes[mCal];
-//                        break;
-//                    case R.id.radioButtonOther:
-//                        mImageType = mImageTypes[mOthrRb];
-//                        break;
-//                    default:
-//                        mImageType = "NO IMAGETYPE SELECTION";
-//                }
-//                sharedPreference = new SharedPreference();
-//                sharedPreference.saveString(context, SharedPreference.IMAGE_TYPE_KEY, mImageType);
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, "Radio Button = " + mImageType, Toast.LENGTH_SHORT);
-//                toast.show();
-
-            }
-        });
-
-        CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
-        mirrorLockupChkBx.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast toast = Toast.makeText(ActivityAppendSession.this, "Mirror LockUp", Toast.LENGTH_SHORT);
-                toast.show();
-
                 String lckup = " false.";
                 CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
                 if (mirrorLockupChkBx.isChecked()) {
@@ -171,56 +101,94 @@ public class ActivityAppendSession extends AppCompatActivity {
                 } else {
                     mLockup = false;
                 }
-                SharedPreference sharedPreference2 = new SharedPreference();
-
-                sharedPreference2.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
+                sharedPreference.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
                 toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_SHORT);
+                toast.show();
+
+                mirrorLockupChkBx.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast toast = Toast.makeText(ActivityAppendSession.this, "Mirror LockUp", Toast.LENGTH_SHORT);
+                        toast.show();
+
+                        String lckup = " false.";
+                        CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
+                        if (mirrorLockupChkBx.isChecked()) {
+                            mLockup = true;
+                            lckup = " true.";
+                        } else {
+                            mLockup = false;
+                        }
+                        SharedPreference sharedPreference2 = new SharedPreference();
+
+                        sharedPreference2.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
+                        toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
+                });
+
+                EditText targetEdtTxt = (EditText) findViewById(R.id.editTargetID);
+                String mTargetID = targetEdtTxt.getText().toString();
+
+                sharedPreference.saveString(context, SharedPreference.TARGET_ID_KEY, mTargetID);
+                toast = Toast.makeText(ActivityAppendSession.this, mTargetID, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
 
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.imageTypeRadioGroup);
+        final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.imageTypeRadioGroup);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        radioGroup.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(RadioGroup group, int selectedId) {
+            public void onClick(View v) {
                 // is anything checked?
+                boolean checked = ((RadioButton) v).isChecked();
 
+                int selectedId = radioGroup.getCheckedRadioButtonId();
 
                 // check which button is checked
                 switch (selectedId) {
                     case R.id.radioButtonPolarAlign:
-                        mImageType = mImageTypes[mPolAln];
+                        if (checked)
+                            mImageType = mImageTypes[mPolAln];
                         break;
                     case R.id.radioButtonFocus:
-                        mImageType = mImageTypes[mFcs];
+                        if (checked)
+                            mImageType = mImageTypes[mFcs];
                         break;
                     case R.id.radioButtonLights:
-                        mImageType = mImageTypes[mLght];
+                        if (checked)
+                            mImageType = mImageTypes[mLght];
                         break;
                     case R.id.radioButtonDarks:
-                        mImageType = mImageTypes[mDrk];
+                        if (checked)
+                            mImageType = mImageTypes[mDrk];
                         break;
                     case R.id.radioButtonBias:
-                        mImageType = mImageTypes[mBs];
+                        if (checked)
+                            mImageType = mImageTypes[mBs];
                         break;
                     case R.id.radioButtonFlat:
-                        mImageType = mImageTypes[mFlt];
+                        if (checked)
+                            mImageType = mImageTypes[mFlt];
                         break;
                     case R.id.radioButtonCalibration:
-                        mImageType = mImageTypes[mCal];
+                        if (checked)
+                            mImageType = mImageTypes[mCal];
                         break;
                     case R.id.radioButtonOther:
-                        mImageType = mImageTypes[mOthrRb];
+                        if (checked)
+                            mImageType = mImageTypes[mOthrRb];
                         break;
-                    default:
-                        mImageType = "NO IMAGETYPE SELECTION";
                 }
                 sharedPreference = new SharedPreference();
 
                 sharedPreference.saveString(context, SharedPreference.IMAGE_TYPE_KEY, mImageType);
                 Toast toast = Toast.makeText(ActivityAppendSession.this, "Radio Button = " + mImageType, Toast.LENGTH_SHORT);
+
                 toast.show();
+
+
             }
         });
 
@@ -233,39 +201,15 @@ public class ActivityAppendSession extends AppCompatActivity {
                 if (vibChkBx.isChecked()) {
                     mVib = true;
                     vib = " true.";
-                    vibChkBx.setChecked(false); // The checked state of this checkbox should be momentary
                 } else {
                     mVib = false;
                     vib = " false.";
                 }
 
                 sharedPreference = new SharedPreference();
-                sharedPreference.saveBoolean(context, SharedPreference.VIBRATION_KEY, mVib);
+                sharedPreference.saveBoolean(context, SharedPreference.VIBRATION_KEY, vibChkBx.isChecked());
                 Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.vibration_text) + vib, Toast.LENGTH_SHORT);
                 toast.show();
-                mVib = false; // The checked state of this checkbox should be momentary
-            }
-        });
-
-        CheckBox meteorChkBx = (CheckBox) findViewById(R.id.chkBxMeteor);
-        meteorChkBx.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String meteor;
-                CheckBox meteorChkBx = (CheckBox) findViewById(R.id.chkBxMeteor);
-                if (meteorChkBx.isChecked()) {
-                    mMtr = true;
-                    meteor = " true.";
-                    meteorChkBx.setChecked(false); // The checked state of this checkbox should be momentary
-                } else {
-                    mMtr = false;
-                    meteor = " false.";
-                }
-                sharedPreference = new SharedPreference();
-                sharedPreference.saveBoolean(context, SharedPreference.METEOR_KEY, mMtr);
-                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.meteor_text) + meteor, Toast.LENGTH_SHORT);
-                toast.show();
-                mMtr = false; // The checked state of this checkbox should be momentary
             }
         });
 
@@ -387,6 +331,26 @@ public class ActivityAppendSession extends AppCompatActivity {
                 sharedPreference = new SharedPreference();
                 sharedPreference.saveBoolean(context, SharedPreference.OTHER_INTERFERENCE_KEY, otherChkBx.isChecked());
                 Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.other_interference_text) + other_interference, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        CheckBox meteorChkBx = (CheckBox) findViewById(R.id.chkBxMeteor);
+        meteorChkBx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String meteor;
+                CheckBox meteorChkBx = (CheckBox) findViewById(R.id.chkBxMeteor);
+                if (meteorChkBx.isChecked()) {
+                    mMtr = true;
+                    meteor = " true.";
+                } else {
+                    mMtr = false;
+                    meteor = " false.";
+                }
+                sharedPreference = new SharedPreference();
+                sharedPreference.saveBoolean(context, SharedPreference.CAR_LIGHTS_KEY, meteorChkBx.isChecked());
+                Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.meteor_text) + meteor, Toast.LENGTH_SHORT);
                 toast.show();
             }
         });

@@ -92,7 +92,5 @@
     <string name="miscPopToastForClose">Should probably just pop a \'Toast\' message that the current session is closed.</string>
     <string name="title_activity_i_delete_session">iDeleteSession</string>
     <string name="delete_edit_text">Will need a selection option for a list of files for sessions to delete.</string>
-    <string name="momentary_txt">Momentary</string>
-    <string name="latched_txt">Latched</string>
 
 </resources>

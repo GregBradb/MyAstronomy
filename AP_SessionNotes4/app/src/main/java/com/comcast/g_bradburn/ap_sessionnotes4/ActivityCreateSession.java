@@ -89,6 +89,8 @@ public class ActivityCreateSession extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
 
                 SharedPreference sharedPreference = new SharedPreference();
 
@@ -139,7 +141,7 @@ public class ActivityCreateSession extends AppCompatActivity {
                 sharedPreference.saveBoolean(context, SharedPreference.ANDROID_DST_KEY, mAndroidDST);
                 Log.i(CREATE_SESSION_MESSAGE, "Android DST set: " + mAndroidDST.toString());
 
-                Toast toast = Toast.makeText(ActivityCreateSession.this, "File name is: " + mFileName, Toast.LENGTH_SHORT);
+                Toast toast = Toast.makeText(ActivityCreateSession.this, "File name is: " + mFileName, Toast.LENGTH_LONG);
                 toast.show();
 
                 String camera_str_1 = "Camera id:  " + mCameraID + ", Time Zone: " + mCameraTZ + ", DST ";
@@ -158,7 +160,7 @@ public class ActivityCreateSession extends AppCompatActivity {
                     android_str_1 = android_str_1 + "OFF.";
                 }
 
-                toast = Toast.makeText(ActivityCreateSession.this, camera_str_1 + ".\n" + android_str_1, Toast.LENGTH_SHORT);
+                toast = Toast.makeText(ActivityCreateSession.this, camera_str_1 + ".\n" + android_str_1, Toast.LENGTH_LONG);
                 toast.show();
 
                 // TODO:  Create a session file / database with the appropriate file name.
@@ -173,7 +175,7 @@ public class ActivityCreateSession extends AppCompatActivity {
 
                 mDir = getFilesDir();
                 String path = mDir.getAbsolutePath();
-                toast = Toast.makeText(ActivityCreateSession.this, "The current path is: " + path, Toast.LENGTH_SHORT);
+                toast = Toast.makeText(ActivityCreateSession.this, "The current path is: " + path, Toast.LENGTH_LONG);
                 toast.show();
 
                 // mFOS = FileOutputStream.
