@@ -6,10 +6,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ActivityAppendSession extends AppCompatActivity {
@@ -45,7 +48,7 @@ public class ActivityAppendSession extends AppCompatActivity {
 
     Boolean mVib, mCld, mFlshLght, mCrLghts, mAirpln, mStllte, mOthrInt, mMtr;
 
-    private SharedPreference sharedPreference;
+    private SharedPreference sharedPreference, mSharedPreference;
     Activity context = this;
 
     @Override
@@ -156,6 +159,8 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+
+
         CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
         mirrorLockupChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -179,13 +184,16 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+        mSharedPreference = new SharedPreference();
+        boolean mMrrrLckp = mSharedPreference.getBooleanValue(context, SharedPreference.MIRROR_LOCKUP_KEY);
+        mirrorLockupChkBx.setChecked(mMrrrLckp);
+
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.imageTypeRadioGroup);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int selectedId) {
                 // is anything checked?
-
 
                 // check which button is checked
                 switch (selectedId) {
@@ -224,6 +232,45 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+        String mRdGrp = mSharedPreference.getStringValue(context, SharedPreference.IMAGE_TYPE_KEY);
+        RadioButton rBtn;
+        switch (mRdGrp) {
+            case "NO IMAGETYPE SELECTION":
+                break;
+            case "POLAR_ALIGN":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonPolarAlign);
+                rBtn.setChecked(true);
+                break;
+            case "FOCUS":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonFocus);
+                rBtn.setChecked(true);
+                break;
+            case "LIGHTS":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonLights);
+                rBtn.setChecked(true);
+                break;
+            case "DARKS":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonDarks);
+                rBtn.setChecked(true);
+                break;
+            case "BIAS":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonBias);
+                rBtn.setChecked(true);
+                break;
+            case "FLAT":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonFlat);
+                rBtn.setChecked(true);
+                break;
+            case "CALIBRATION":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonCalibration);
+                rBtn.setChecked(true);
+                break;
+            case "OTHER":
+                rBtn = (RadioButton) findViewById(R.id.radioButtonOther);
+                rBtn.setChecked(true);
+                break;
+        }
+
         CheckBox vibChkBx = (CheckBox) findViewById(R.id.chkBxVibration);
         vibChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -233,7 +280,6 @@ public class ActivityAppendSession extends AppCompatActivity {
                 if (vibChkBx.isChecked()) {
                     mVib = true;
                     vib = " true.";
-                    vibChkBx.setChecked(false); // The checked state of this checkbox should be momentary
                 } else {
                     mVib = false;
                     vib = " false.";
@@ -243,7 +289,10 @@ public class ActivityAppendSession extends AppCompatActivity {
                 sharedPreference.saveBoolean(context, SharedPreference.VIBRATION_KEY, mVib);
                 Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.vibration_text) + vib, Toast.LENGTH_SHORT);
                 toast.show();
+
                 mVib = false; // The checked state of this checkbox should be momentary
+                vibChkBx.setChecked(false); // The checked state of this checkbox should be momentary
+                sharedPreference.saveBoolean(context, SharedPreference.VIBRATION_KEY, mVib);
             }
         });
 
@@ -256,7 +305,6 @@ public class ActivityAppendSession extends AppCompatActivity {
                 if (meteorChkBx.isChecked()) {
                     mMtr = true;
                     meteor = " true.";
-                    meteorChkBx.setChecked(false); // The checked state of this checkbox should be momentary
                 } else {
                     mMtr = false;
                     meteor = " false.";
@@ -265,9 +313,14 @@ public class ActivityAppendSession extends AppCompatActivity {
                 sharedPreference.saveBoolean(context, SharedPreference.METEOR_KEY, mMtr);
                 Toast toast = Toast.makeText(ActivityAppendSession.this, getString(R.string.meteor_text) + meteor, Toast.LENGTH_SHORT);
                 toast.show();
+
                 mMtr = false; // The checked state of this checkbox should be momentary
+                meteorChkBx.setChecked(false); // The checked state of this checkbox should be momentary
+                sharedPreference.saveBoolean(context, SharedPreference.METEOR_KEY, mMtr);
             }
         });
+
+        SharedPreference mSharedPreference = new SharedPreference();
 
         CheckBox cloudChkBx = (CheckBox) findViewById(R.id.chkBxCloud);
         cloudChkBx.setOnClickListener(new View.OnClickListener() {
@@ -290,6 +343,9 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+        boolean mCld = mSharedPreference.getBooleanValue(context, SharedPreference.CLOUD_KEY);
+        cloudChkBx.setChecked(mCld);
+
         CheckBox flashlightChkBx = (CheckBox) findViewById(R.id.chkBxFlashlight);
         flashlightChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -311,6 +367,9 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+        boolean mFlshLght = mSharedPreference.getBooleanValue(context, SharedPreference.FLASHLIGHT_KEY);
+        flashlightChkBx.setChecked(mFlshLght);
+
         CheckBox carLightsChkBx = (CheckBox) findViewById(R.id.chkBxCarLights);
         carLightsChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -330,6 +389,9 @@ public class ActivityAppendSession extends AppCompatActivity {
                 toast.show();
             }
         });
+
+        boolean mCrLghts = mSharedPreference.getBooleanValue(context, SharedPreference.CAR_LIGHTS_KEY);
+        carLightsChkBx.setChecked(mCrLghts);
 
         CheckBox airplaneChkBx = (CheckBox) findViewById(R.id.chkBxAirplane);
         airplaneChkBx.setOnClickListener(new View.OnClickListener() {
@@ -351,6 +413,9 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+        boolean mArpln = mSharedPreference.getBooleanValue(context, SharedPreference.AIRPLANE_KEY);
+        airplaneChkBx.setChecked(mArpln);
+
         CheckBox satelliteChkBx = (CheckBox) findViewById(R.id.chkBxSatellite);
         satelliteChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -371,6 +436,9 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+        boolean mStllt = mSharedPreference.getBooleanValue(context, SharedPreference.SATELLITE_KEY);
+        satelliteChkBx.setChecked(mStllt);
+
         CheckBox otherChkBx = (CheckBox) findViewById(R.id.chkBxOtherInterference);
         otherChkBx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -390,5 +458,86 @@ public class ActivityAppendSession extends AppCompatActivity {
                 toast.show();
             }
         });
+
+        boolean mOthr = mSharedPreference.getBooleanValue(context, SharedPreference.OTHER_INTERFERENCE_KEY);
+        otherChkBx.setChecked(mOthr);
+
+        otherChkBx.setChecked(mOthr);
+
+//        EditText expTimeEdtTxt = (EditText) findViewById(R.id.expTimeEditTxt);
+//        String mExpTm = expTimeEdtTxt.getText().toString();
+//        if (mExpTm.equals("")) {
+//            myExpTime = 0;
+//            mExpTm = "Exposure Time not set.";
+//        } else {
+//            myExpTime = Integer.parseInt(mExpTm);
+//        }
+//        sharedPreference.saveInt(context, SharedPreference.ISO_KEY, myISO);
+//        Toast toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_SHORT);
+//        toast.show();
+//
+//        EditText isoEdtTxt = (EditText) findViewById(R.id.editISO);
+//        String mISO = isoEdtTxt.getText().toString();
+//        if (mISO.equals("")) {
+//            myISO = -999;
+//            mISO = "ISO not set.";
+//        } else {
+//            myISO = Integer.parseInt(mISO);
+//        }
+//        sharedPreference.saveInt(context, SharedPreference.ISO_KEY, myISO);
+//        toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_SHORT);
+//        toast.show();
+
+        EditText expTimeEdtTxt = (EditText) findViewById(R.id.expTimeEditTxt);
+        // TODO:  Need a better way to handle this.  Right now a <CR> is needed to call this routine
+        expTimeEdtTxt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String myExpTimeEdtTxt = v.getText().toString();
+                myExpTime = Integer.parseInt(myExpTimeEdtTxt);
+                sharedPreference.saveInt(context, SharedPreference.EXPOSURE_TIME_KEY, myExpTime);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, myExpTimeEdtTxt, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        EditText IsoEdtTxt = (EditText) findViewById(R.id.editISO);
+        // TODO:  Need a better way to handle this.  Right now a <CR> is needed to call this routine
+        IsoEdtTxt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String myIsoEdtTxt = v.getText().toString();
+                myISO = Integer.parseInt(myIsoEdtTxt);
+                sharedPreference.saveInt(context, SharedPreference.ISO_KEY, myISO);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, myIsoEdtTxt, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        EditText TargetIdEdtTxt = (EditText) findViewById(R.id.editTargetID);
+        // TODO:  Need a better way to handle this.  Right now a <CR> is needed to call this routine
+        TargetIdEdtTxt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String myTargetID = v.getText().toString();
+                sharedPreference.saveString(context, SharedPreference.TARGET_ID_KEY, myTargetID);
+                Toast toast = Toast.makeText(ActivityAppendSession.this, myTargetID, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        int mExpTime = mSharedPreference.getIntValue(context, SharedPreference.EXPOSURE_TIME_KEY);
+        expTimeEdtTxt.setText(Integer.toString(mExpTime));
+
+        EditText expIsoTxt = (EditText) findViewById(R.id.editISO);
+        int mIso = mSharedPreference.getIntValue(context, SharedPreference.ISO_KEY);
+        expIsoTxt.setText(Integer.toString(mIso));
+
+        EditText targetId = (EditText) findViewById(R.id.editTargetID);
+        String mTrgtId = mSharedPreference.getStringValue(context, SharedPreference.TARGET_ID_KEY);
+        targetId.setText(mTrgtId);
     }
 }

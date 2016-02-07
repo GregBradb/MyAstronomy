@@ -61,7 +61,7 @@ public class ActivityCreateSession extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    private SharedPreference sharedPreference;
+    private SharedPreference sharedPreference, mSharedPreference;
     Activity context = this;
 
     /**
@@ -84,6 +84,11 @@ public class ActivityCreateSession extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        mSharedPreference = new SharedPreference();
+        String tString = mSharedPreference.getStringValue(this,SharedPreference.SESSION_NAME_KEY);
+
+//        EditText ezTextual = (EditText) findViewById(R.id.session_edit_text);
+//        ezTextual.setText(tString);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -92,14 +97,14 @@ public class ActivityCreateSession extends AppCompatActivity {
 
                 SharedPreference sharedPreference = new SharedPreference();
 
-                EditText ssnEditText = (EditText) findViewById(R.id.session_edit_text);
-                mSessionName = ssnEditText.getText().toString();
+                EditText ssnEdtTxt = (EditText) findViewById(R.id.session_edit_text);
+                mSessionName = ssnEdtTxt.getText().toString();
                 // saveString the shared preferences
                 sharedPreference.saveString(context, SharedPreference.SESSION_NAME_KEY, mSessionName);
                 Log.i(CREATE_SESSION_MESSAGE, "Session Name: " + mSessionName);
 
-                EditText locEditText = (EditText) findViewById(R.id.location_edit_text);
-                mLocation = locEditText.getText().toString();
+                EditText locEdtTxt = (EditText) findViewById(R.id.location_edit_text);
+                mLocation = locEdtTxt.getText().toString();
                 sharedPreference.saveString(context, SharedPreference.LOCATION_ID_KEY, mLocation);
                 Log.i(CREATE_SESSION_MESSAGE, "Location: " + mLocation);
 
@@ -145,16 +150,14 @@ public class ActivityCreateSession extends AppCompatActivity {
                 String camera_str_1 = "Camera id:  " + mCameraID + ", Time Zone: " + mCameraTZ + ", DST ";
                 if (mCameraDST) {
                     camera_str_1 = camera_str_1 + "ON.";
-                }
-                else{
+                } else {
                     camera_str_1 = camera_str_1 + "OFF.";
                 }
 
                 String android_str_1 = "Android id:  " + mAndroidID + ", Time Zone: " + mAndroidTZ + ", DST ";
                 if (mAndroidDST) {
                     android_str_1 = android_str_1 + "ON.";
-                }
-                else{
+                } else {
                     android_str_1 = android_str_1 + "OFF.";
                 }
 
@@ -182,7 +185,6 @@ public class ActivityCreateSession extends AppCompatActivity {
         });
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

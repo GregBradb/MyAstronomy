@@ -23,21 +23,15 @@
     </layouts>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="INFO" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9476c82e-57c9-40eb-a2dc-da0017e9883b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MyFileIO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/SharedPreference.java" />
-      <change type="MOVED" beforePath="C:\Users\Greg\AndroidStudioProjects\MyAstronomy\AP_SessionNotes4\app\src\main\res\layout\activity_session_management.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/management_create_session.xml" />
-      <change type="MOVED" beforePath="C:\Users\Greg\AndroidStudioProjects\MyAstronomy\AP_SessionNotes4\app\src\main\res\layout\fragment_session_management.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_management_create_session.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityReviewSession.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityReviewSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_management_create_session.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_management_create_session.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -69,45 +63,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.724138">
-              <caret line="101" column="27" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1604#7157#0" expanded="true" />
-                <element signature="e#7156#7157#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityCreateSession.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ActivityCreateSession.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="101" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2716895">
+              <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#onCreateOptionsMenu#0;class#ActivityCreateSession#0" expanded="false" />
+                <element signature="e#3364#8832#0" expanded="true" />
+                <element signature="e#8831#8832#0" expanded="true" />
                 <element signature="method#onOptionsItemSelected#0;class#ActivityCreateSession#0" expanded="false" />
-                <element signature="docComment;class#PlaceholderFragment#0;class#ActivityCreateSession#0" expanded="false" />
                 <element signature="class#SectionsPagerAdapter#0;class#ActivityCreateSession#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SharedPreference.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/SharedPreference.java">
+      <file leaf-file-name="management_create_session.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/management_create_session.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+            <state vertical-scroll-proportion="-1.362069">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1780#1781#0" expanded="true" />
-                <element signature="e#1803#1804#0" expanded="true" />
+                <element signature="e#1379#1419#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_main.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.5517242">
+              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_management_create_session.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_management_create_session.xml">
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#9328#9360#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,39 +125,46 @@
       <file leaf-file-name="ActivityAppendSession.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.724138">
-              <caret line="61" column="65" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="65" />
+            <state vertical-scroll-proportion="-11.344828">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
-                <element signature="e#2220#6081#0" expanded="true" />
-                <element signature="e#4538#5673#0" expanded="true" />
-                <element signature="e#5672#5673#0" expanded="true" />
-                <element signature="e#6080#6081#0" expanded="true" />
-                <element signature="e#6215#8354#0" expanded="true" />
-                <element signature="e#8353#8354#0" expanded="true" />
-                <element signature="e#8459#8923#0" expanded="true" />
-                <element signature="e#8699#8735#0" expanded="true" />
-                <element signature="e#8811#8847#0" expanded="true" />
-                <element signature="e#8922#8923#0" expanded="true" />
-                <element signature="e#9043#9485#0" expanded="true" />
-                <element signature="e#9284#9314#0" expanded="true" />
-                <element signature="e#9390#9409#0" expanded="true" />
-                <element signature="e#9484#9485#0" expanded="true" />
-                <element signature="e#9602#10044#0" expanded="true" />
-                <element signature="e#9843#9873#0" expanded="true" />
-                <element signature="e#9949#9968#0" expanded="true" />
-                <element signature="e#10043#10044#0" expanded="true" />
-                <element signature="e#10158#10594#0" expanded="true" />
-                <element signature="e#10397#10425#0" expanded="true" />
-                <element signature="e#10501#10518#0" expanded="true" />
-                <element signature="e#10593#10594#0" expanded="true" />
-                <element signature="e#10711#11150#0" expanded="true" />
-                <element signature="e#10951#10980#0" expanded="true" />
-                <element signature="e#11056#11074#0" expanded="true" />
-                <element signature="e#11149#11150#0" expanded="true" />
-                <element signature="e#11258#11688#0" expanded="true" />
-                <element signature="e#11495#11521#0" expanded="true" />
-                <element signature="e#11597#11612#0" expanded="true" />
-                <element signature="e#11687#11688#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#2742#7530#0" expanded="true" />
+                <element signature="e#7529#7530#0" expanded="true" />
+                <element signature="e#7665#8584#0" expanded="true" />
+                <element signature="e#8583#8584#0" expanded="true" />
+                <element signature="e#8930#10744#0" expanded="true" />
+                <element signature="e#10743#10744#0" expanded="true" />
+                <element signature="e#12404#13463#0" expanded="true" />
+                <element signature="e#13063#13097#0" expanded="true" />
+                <element signature="e#13462#13463#0" expanded="true" />
+                <element signature="e#13580#14647#0" expanded="true" />
+                <element signature="e#14247#14278#0" expanded="true" />
+                <element signature="e#14646#14647#0" expanded="true" />
+                <element signature="e#14831#15624#0" expanded="true" />
+                <element signature="e#15510#15540#0" expanded="true" />
+                <element signature="e#15623#15624#0" expanded="true" />
+                <element signature="e#15886#16739#0" expanded="true" />
+                <element signature="e#16615#16650#0" expanded="true" />
+                <element signature="e#16738#16739#0" expanded="true" />
+                <element signature="e#17018#17853#0" expanded="true" />
+                <element signature="e#17737#17765#0" expanded="true" />
+                <element signature="e#17852#17853#0" expanded="true" />
+                <element signature="e#18126#18954#0" expanded="true" />
+                <element signature="e#18834#18867#0" expanded="true" />
+                <element signature="e#18953#18954#0" expanded="true" />
+                <element signature="e#19223#20061#0" expanded="true" />
+                <element signature="e#19939#19973#0" expanded="true" />
+                <element signature="e#20060#20061#0" expanded="true" />
+                <element signature="e#20332#21222#0" expanded="true" />
+                <element signature="e#21082#21125#0" expanded="true" />
+                <element signature="e#21221#21222#0" expanded="true" />
+                <element signature="e#22671#23239#0" expanded="true" />
+                <element signature="e#23238#23239#0" expanded="true" />
+                <element signature="e#23456#23994#0" expanded="true" />
+                <element signature="e#23993#23994#0" expanded="true" />
+                <element signature="e#24226#24721#0" expanded="true" />
+                <element signature="e#24720#24721#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -156,25 +172,27 @@
       </file>
       <file leaf-file-name="content_activity_image_details.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml">
-          <provider selected="true" editor-type-id="android-designer">
+          <provider editor-type-id="android-designer">
             <state />
           </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3783784">
-              <caret line="266" column="36" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="36" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.827586">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
-                <element signature="e#742#767#0" expanded="true" />
+                <element signature="e#12433#12454#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityReviewSession.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityReviewSession.java">
+      <file leaf-file-name="SharedPreference.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/SharedPreference.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7324263">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-              <folding />
+            <state vertical-scroll-proportion="-4.172414">
+              <caret line="68" column="23" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1771,13 +1789,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityImageDetails.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityReviewSession.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MyFileIO.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/SharedPreference.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_management_create_session.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/management_create_session.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java" />
       </list>
     </option>
   </component>
@@ -1813,10 +1834,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -1855,6 +1872,24 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AP_SessionNotes4" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -1919,6 +1954,10 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1931,8 +1970,8 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Samsung_Galaxy_Note_3_API_21" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Samsung_Tab_2_7_0_API_17" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable/xhdpi" />
   </component>
@@ -2131,29 +2170,29 @@
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.49041533" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.53304905" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6695279" sideWeight="0.47763577" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.54545456" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="1.0" sideWeight="0.5063898" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2918455" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.49361023" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2918455" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.4968051" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.49361023" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298722" sideWeight="0.49253732" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="1.0" sideWeight="0.50958467" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.46695095" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.45454547" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32904148" sideWeight="0.49361023" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298722" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49253732" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298722" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39914164" sideWeight="0.48722044" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2180,19 +2219,97 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="43" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="56" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="21" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2742#7530#0" expanded="true" />
+            <element signature="e#7529#7530#0" expanded="true" />
+            <element signature="e#7665#8584#0" expanded="true" />
+            <element signature="e#8583#8584#0" expanded="true" />
+            <element signature="e#8930#10744#0" expanded="true" />
+            <element signature="e#10743#10744#0" expanded="true" />
+            <element signature="e#12404#13463#0" expanded="true" />
+            <element signature="e#13063#13097#0" expanded="true" />
+            <element signature="e#13462#13463#0" expanded="true" />
+            <element signature="e#13580#14647#0" expanded="true" />
+            <element signature="e#14247#14278#0" expanded="true" />
+            <element signature="e#14646#14647#0" expanded="true" />
+            <element signature="e#14831#15624#0" expanded="true" />
+            <element signature="e#15510#15540#0" expanded="true" />
+            <element signature="e#15623#15624#0" expanded="true" />
+            <element signature="e#15886#16739#0" expanded="true" />
+            <element signature="e#16615#16650#0" expanded="true" />
+            <element signature="e#16738#16739#0" expanded="true" />
+            <element signature="e#17018#17853#0" expanded="true" />
+            <element signature="e#17737#17765#0" expanded="true" />
+            <element signature="e#17852#17853#0" expanded="true" />
+            <element signature="e#18126#18954#0" expanded="true" />
+            <element signature="e#18834#18867#0" expanded="true" />
+            <element signature="e#18953#18954#0" expanded="true" />
+            <element signature="e#19223#20061#0" expanded="true" />
+            <element signature="e#19939#19973#0" expanded="true" />
+            <element signature="e#20060#20061#0" expanded="true" />
+            <element signature="e#20332#21222#0" expanded="true" />
+            <element signature="e#21082#21125#0" expanded="true" />
+            <element signature="e#21221#21222#0" expanded="true" />
+            <element signature="e#22671#23239#0" expanded="true" />
+            <element signature="e#23238#23239#0" expanded="true" />
+            <element signature="e#23456#23994#0" expanded="true" />
+            <element signature="e#23993#23994#0" expanded="true" />
+            <element signature="e#24226#24721#0" expanded="true" />
+            <element signature="e#24720#24721#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="266" column="36" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="36" />
+          <folding>
+            <element signature="e#12433#12454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityReviewSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="103" selection-start-line="16" selection-start-column="103" selection-end-line="16" selection-end-column="103" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1604#7157#0" expanded="true" />
-            <element signature="e#7156#7157#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2201,7 +2318,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="124" selection-start-line="25" selection-start-column="124" selection-end-line="25" selection-end-column="124" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3364#8832#0" expanded="true" />
+            <element signature="e#8831#8832#0" expanded="true" />
+            <element signature="method#onOptionsItemSelected#0;class#ActivityCreateSession#0" expanded="false" />
+            <element signature="class#SectionsPagerAdapter#0;class#ActivityCreateSession#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2210,8 +2333,43 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6215#8354#0" expanded="true" />
-            <element signature="e#8353#8354#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2742#7530#0" expanded="true" />
+            <element signature="e#7529#7530#0" expanded="true" />
+            <element signature="e#7665#8584#0" expanded="true" />
+            <element signature="e#8583#8584#0" expanded="true" />
+            <element signature="e#8930#10744#0" expanded="true" />
+            <element signature="e#10743#10744#0" expanded="true" />
+            <element signature="e#12404#13463#0" expanded="true" />
+            <element signature="e#13063#13097#0" expanded="true" />
+            <element signature="e#13462#13463#0" expanded="true" />
+            <element signature="e#13580#14647#0" expanded="true" />
+            <element signature="e#14247#14278#0" expanded="true" />
+            <element signature="e#14646#14647#0" expanded="true" />
+            <element signature="e#14831#15624#0" expanded="true" />
+            <element signature="e#15510#15540#0" expanded="true" />
+            <element signature="e#15623#15624#0" expanded="true" />
+            <element signature="e#15886#16739#0" expanded="true" />
+            <element signature="e#16615#16650#0" expanded="true" />
+            <element signature="e#16738#16739#0" expanded="true" />
+            <element signature="e#17018#17853#0" expanded="true" />
+            <element signature="e#17737#17765#0" expanded="true" />
+            <element signature="e#17852#17853#0" expanded="true" />
+            <element signature="e#18126#18954#0" expanded="true" />
+            <element signature="e#18834#18867#0" expanded="true" />
+            <element signature="e#18953#18954#0" expanded="true" />
+            <element signature="e#19223#20061#0" expanded="true" />
+            <element signature="e#19939#19973#0" expanded="true" />
+            <element signature="e#20060#20061#0" expanded="true" />
+            <element signature="e#20332#21222#0" expanded="true" />
+            <element signature="e#21082#21125#0" expanded="true" />
+            <element signature="e#21221#21222#0" expanded="true" />
+            <element signature="e#22671#23239#0" expanded="true" />
+            <element signature="e#23238#23239#0" expanded="true" />
+            <element signature="e#23456#23994#0" expanded="true" />
+            <element signature="e#23993#23994#0" expanded="true" />
+            <element signature="e#24226#24721#0" expanded="true" />
+            <element signature="e#24720#24721#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2220,7 +2378,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2229,9 +2386,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1604#7157#0" expanded="true" />
-            <element signature="e#7156#7157#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2240,7 +2395,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3364#8832#0" expanded="true" />
+            <element signature="e#8831#8832#0" expanded="true" />
+            <element signature="method#onOptionsItemSelected#0;class#ActivityCreateSession#0" expanded="false" />
+            <element signature="class#SectionsPagerAdapter#0;class#ActivityCreateSession#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2252,19 +2413,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="e#1078#1106#0" expanded="true" />
-            <element signature="e#2171#2195#0" expanded="true" />
-            <element signature="e#2673#2696#0" expanded="true" />
-            <element signature="e#3257#3281#0" expanded="true" />
-            <element signature="e#3760#3784#0" expanded="true" />
-            <element signature="e#4845#4875#0" expanded="true" />
-            <element signature="e#5305#5329#0" expanded="true" />
-            <element signature="e#5897#5924#0" expanded="true" />
-            <element signature="e#6399#6420#0" expanded="true" />
-            <element signature="e#6895#6926#0" expanded="true" />
-            <element signature="e#7886#7921#0" expanded="true" />
-            <element signature="e#8397#8422#0" expanded="true" />
-            <element signature="e#8898#8930#0" expanded="true" />
+            <element signature="e#9328#9360#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2277,31 +2426,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
-            <element signature="e#742#767#0" expanded="true" />
-            <element signature="e#1179#1206#0" expanded="true" />
-            <element signature="e#2083#2109#0" expanded="true" />
-            <element signature="e#2453#2473#0" expanded="true" />
-            <element signature="e#2818#2844#0" expanded="true" />
-            <element signature="e#3188#3213#0" expanded="true" />
-            <element signature="e#3556#3575#0" expanded="true" />
-            <element signature="e#3918#3937#0" expanded="true" />
-            <element signature="e#4287#4305#0" expanded="true" />
-            <element signature="e#4649#4669#0" expanded="true" />
-            <element signature="e#5513#5532#0" expanded="true" />
-            <element signature="e#6140#6165#0" expanded="true" />
-            <element signature="e#6772#6790#0" expanded="true" />
-            <element signature="e#7396#7419#0" expanded="true" />
-            <element signature="e#8026#8050#0" expanded="true" />
-            <element signature="e#8654#8675#0" expanded="true" />
-            <element signature="e#9235#9264#0" expanded="true" />
-            <element signature="e#9804#9832#0" expanded="true" />
-            <element signature="e#10175#10198#0" expanded="true" />
-            <element signature="e#10608#10625#0" expanded="true" />
-            <element signature="e#11126#11144#0" expanded="true" />
-            <element signature="e#11480#11498#0" expanded="true" />
-            <element signature="e#12067#12088#0" expanded="true" />
-            <element signature="e#12591#12612#0" expanded="true" />
-            <element signature="e#12953#12977#0" expanded="true" />
+            <element signature="e#12433#12454#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2313,11 +2438,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="31" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="e#653#680#0" expanded="true" />
-            <element signature="e#1379#1419#0" expanded="true" />
-            <element signature="e#1673#1692#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2328,9 +2449,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="e#1250#1278#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2338,7 +2456,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2355,9 +2472,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1604#7157#0" expanded="true" />
-            <element signature="e#7156#7157#0" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2366,7 +2481,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3364#8832#0" expanded="true" />
+            <element signature="e#8831#8832#0" expanded="true" />
+            <element signature="method#onOptionsItemSelected#0;class#ActivityCreateSession#0" expanded="false" />
+            <element signature="class#SectionsPagerAdapter#0;class#ActivityCreateSession#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2378,19 +2499,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding>
-            <element signature="e#1078#1106#0" expanded="true" />
-            <element signature="e#2171#2195#0" expanded="true" />
-            <element signature="e#2673#2696#0" expanded="true" />
-            <element signature="e#3257#3281#0" expanded="true" />
-            <element signature="e#3760#3784#0" expanded="true" />
-            <element signature="e#4845#4875#0" expanded="true" />
-            <element signature="e#5305#5329#0" expanded="true" />
-            <element signature="e#5897#5924#0" expanded="true" />
-            <element signature="e#6399#6420#0" expanded="true" />
-            <element signature="e#6895#6926#0" expanded="true" />
-            <element signature="e#7886#7921#0" expanded="true" />
-            <element signature="e#8397#8422#0" expanded="true" />
-            <element signature="e#8898#8930#0" expanded="true" />
+            <element signature="e#9328#9360#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2403,31 +2512,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="134" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
-            <element signature="e#742#767#0" expanded="true" />
-            <element signature="e#1179#1206#0" expanded="true" />
-            <element signature="e#2083#2109#0" expanded="true" />
-            <element signature="e#2453#2473#0" expanded="true" />
-            <element signature="e#2818#2844#0" expanded="true" />
-            <element signature="e#3188#3213#0" expanded="true" />
-            <element signature="e#3556#3575#0" expanded="true" />
-            <element signature="e#3918#3937#0" expanded="true" />
-            <element signature="e#4287#4305#0" expanded="true" />
-            <element signature="e#4649#4669#0" expanded="true" />
-            <element signature="e#5513#5532#0" expanded="true" />
-            <element signature="e#6140#6165#0" expanded="true" />
-            <element signature="e#6772#6790#0" expanded="true" />
-            <element signature="e#7396#7419#0" expanded="true" />
-            <element signature="e#8026#8050#0" expanded="true" />
-            <element signature="e#8654#8675#0" expanded="true" />
-            <element signature="e#9235#9264#0" expanded="true" />
-            <element signature="e#9804#9832#0" expanded="true" />
-            <element signature="e#10175#10198#0" expanded="true" />
-            <element signature="e#10608#10625#0" expanded="true" />
-            <element signature="e#11126#11144#0" expanded="true" />
-            <element signature="e#11480#11498#0" expanded="true" />
-            <element signature="e#12067#12088#0" expanded="true" />
-            <element signature="e#12591#12612#0" expanded="true" />
-            <element signature="e#12953#12977#0" expanded="true" />
+            <element signature="e#12433#12454#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2439,11 +2524,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="31" column="31" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="e#653#680#0" expanded="true" />
-            <element signature="e#1379#1419#0" expanded="true" />
-            <element signature="e#1673#1692#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2454,9 +2535,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="e#1250#1278#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2464,7 +2542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2499,7 +2576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5011338">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2507,7 +2583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30839002">
           <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2518,16 +2593,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.448277">
           <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-          <folding>
-            <element signature="e#328#361#0" expanded="true" />
-            <element signature="e#386#421#0" expanded="true" />
-            <element signature="e#447#482#0" expanded="true" />
-            <element signature="e#506#539#0" expanded="true" />
-            <element signature="e#564#604#0" expanded="true" />
-            <element signature="e#865#887#0" expanded="true" />
-            <element signature="e#1119#1144#0" expanded="true" />
-            <element signature="e#1365#1395#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2538,9 +2603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8411215">
           <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#1266#1285#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2567,9 +2629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.0315534">
           <caret line="25" column="48" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
-          <folding>
-            <element signature="e#1155#1181#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2577,7 +2636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.23129252">
           <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2588,7 +2646,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2596,29 +2653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="25" column="45" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_management_create_session.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/management_create_session.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68929505">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2629,20 +2663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.689655">
           <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
-          <folding>
-            <element signature="e#1873#1892#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2650,7 +2670,131 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38548753">
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_activity_review.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_review.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityReviewSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48137107">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.074074">
+          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.77097505">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="e#356#379#0" expanded="true" />
+            <element signature="e#526#549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.825397">
+          <caret line="206" column="0" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/SharedPreference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.172414">
+          <caret line="68" column="23" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.827586">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#12433#12454#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.344828">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2742#7530#0" expanded="true" />
+            <element signature="e#7529#7530#0" expanded="true" />
+            <element signature="e#7665#8584#0" expanded="true" />
+            <element signature="e#8583#8584#0" expanded="true" />
+            <element signature="e#8930#10744#0" expanded="true" />
+            <element signature="e#10743#10744#0" expanded="true" />
+            <element signature="e#12404#13463#0" expanded="true" />
+            <element signature="e#13063#13097#0" expanded="true" />
+            <element signature="e#13462#13463#0" expanded="true" />
+            <element signature="e#13580#14647#0" expanded="true" />
+            <element signature="e#14247#14278#0" expanded="true" />
+            <element signature="e#14646#14647#0" expanded="true" />
+            <element signature="e#14831#15624#0" expanded="true" />
+            <element signature="e#15510#15540#0" expanded="true" />
+            <element signature="e#15623#15624#0" expanded="true" />
+            <element signature="e#15886#16739#0" expanded="true" />
+            <element signature="e#16615#16650#0" expanded="true" />
+            <element signature="e#16738#16739#0" expanded="true" />
+            <element signature="e#17018#17853#0" expanded="true" />
+            <element signature="e#17737#17765#0" expanded="true" />
+            <element signature="e#17852#17853#0" expanded="true" />
+            <element signature="e#18126#18954#0" expanded="true" />
+            <element signature="e#18834#18867#0" expanded="true" />
+            <element signature="e#18953#18954#0" expanded="true" />
+            <element signature="e#19223#20061#0" expanded="true" />
+            <element signature="e#19939#19973#0" expanded="true" />
+            <element signature="e#20060#20061#0" expanded="true" />
+            <element signature="e#20332#21222#0" expanded="true" />
+            <element signature="e#21082#21125#0" expanded="true" />
+            <element signature="e#21221#21222#0" expanded="true" />
+            <element signature="e#22671#23239#0" expanded="true" />
+            <element signature="e#23238#23239#0" expanded="true" />
+            <element signature="e#23456#23994#0" expanded="true" />
+            <element signature="e#23993#23994#0" expanded="true" />
+            <element signature="e#24226#24721#0" expanded="true" />
+            <element signature="e#24720#24721#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2665,131 +2809,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_management_create_session.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2857144">
-          <caret line="42" column="26" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#9328#9360#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5517242">
+          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/management_create_session.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.362069">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#1379#1419#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityCreateSession.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2716895">
+          <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreateOptionsMenu#0;class#ActivityCreateSession#0" expanded="false" />
+            <element signature="e#3364#8832#0" expanded="true" />
+            <element signature="e#8831#8832#0" expanded="true" />
             <element signature="method#onOptionsItemSelected#0;class#ActivityCreateSession#0" expanded="false" />
-            <element signature="docComment;class#PlaceholderFragment#0;class#ActivityCreateSession#0" expanded="false" />
             <element signature="class#SectionsPagerAdapter#0;class#ActivityCreateSession#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/SharedPreference.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1780#1781#0" expanded="true" />
-            <element signature="e#1803#1804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityAppendSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.724138">
-          <caret line="61" column="65" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="65" />
-          <folding>
-            <element signature="e#2220#6081#0" expanded="true" />
-            <element signature="e#4538#5673#0" expanded="true" />
-            <element signature="e#5672#5673#0" expanded="true" />
-            <element signature="e#6080#6081#0" expanded="true" />
-            <element signature="e#6215#8354#0" expanded="true" />
-            <element signature="e#8353#8354#0" expanded="true" />
-            <element signature="e#8459#8923#0" expanded="true" />
-            <element signature="e#8699#8735#0" expanded="true" />
-            <element signature="e#8811#8847#0" expanded="true" />
-            <element signature="e#8922#8923#0" expanded="true" />
-            <element signature="e#9043#9485#0" expanded="true" />
-            <element signature="e#9284#9314#0" expanded="true" />
-            <element signature="e#9390#9409#0" expanded="true" />
-            <element signature="e#9484#9485#0" expanded="true" />
-            <element signature="e#9602#10044#0" expanded="true" />
-            <element signature="e#9843#9873#0" expanded="true" />
-            <element signature="e#9949#9968#0" expanded="true" />
-            <element signature="e#10043#10044#0" expanded="true" />
-            <element signature="e#10158#10594#0" expanded="true" />
-            <element signature="e#10397#10425#0" expanded="true" />
-            <element signature="e#10501#10518#0" expanded="true" />
-            <element signature="e#10593#10594#0" expanded="true" />
-            <element signature="e#10711#11150#0" expanded="true" />
-            <element signature="e#10951#10980#0" expanded="true" />
-            <element signature="e#11056#11074#0" expanded="true" />
-            <element signature="e#11149#11150#0" expanded="true" />
-            <element signature="e#11258#11688#0" expanded="true" />
-            <element signature="e#11495#11521#0" expanded="true" />
-            <element signature="e#11597#11612#0" expanded="true" />
-            <element signature="e#11687#11688#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.724138">
-          <caret line="101" column="27" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1604#7157#0" expanded="true" />
-            <element signature="e#7156#7157#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_activity_image_details.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3783784">
-          <caret line="266" column="36" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="36" />
-          <folding>
-            <element signature="e#742#767#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_activity_review.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="48" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_review.xml">
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/comcast/g_bradburn/ap_sessionnotes4/ActivityReviewSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7324263">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>

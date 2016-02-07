@@ -13,6 +13,8 @@
     <string name="title_section3">Image Details</string>
 
     <!-- menu_main -->
+    <string name="action_import">Import</string>
+    <string name="action_export">Export</string>
     <string name="action_settings">Settings</string>
 
     <!-- activity_welcome -->
