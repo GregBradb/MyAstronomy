@@ -96,5 +96,6 @@
     <string name="delete_edit_text">Will need a selection option for a list of files for sessions to delete.</string>
     <string name="momentary_txt">Momentary</string>
     <string name="latched_txt">Latched</string>
+    <string name="gmt_init_txt">GMT -</string>
 
 </resources>

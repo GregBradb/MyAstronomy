@@ -58,6 +58,9 @@ public class ActivityAppendSession extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        sharedPreference = new SharedPreference();
+        mSharedPreference = new SharedPreference();
+
         // TODO:  Can I position the floating action button closer to the text inputs so it seems related to them?
         // TODO:  Should have listeners for the txt fields too so the FAB can be deleted.
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -68,7 +71,7 @@ public class ActivityAppendSession extends AppCompatActivity {
                         .setAction("Action", null).show();
 
                 // Read and display the shared preferences
-                sharedPreference = new SharedPreference();
+//                sharedPreference = new SharedPreference();
 
                 Toast toast;
 
@@ -84,6 +87,7 @@ public class ActivityAppendSession extends AppCompatActivity {
                 sharedPreference.saveInt(context, SharedPreference.EXPOSURE_TIME_KEY, myExpTime);
                 toast = Toast.makeText(ActivityAppendSession.this, mExpTime, Toast.LENGTH_SHORT);
                 toast.show();
+
 
                 EditText isoEdtTxt = (EditText) findViewById(R.id.editISO);
                 String mISO = isoEdtTxt.getText().toString();
@@ -102,64 +106,8 @@ public class ActivityAppendSession extends AppCompatActivity {
                 sharedPreference.saveString(context, SharedPreference.TARGET_ID_KEY, mTargetID);
                 toast = Toast.makeText(ActivityAppendSession.this, mTargetID, Toast.LENGTH_SHORT);
                 toast.show();
-
-//                There is no need to do the lockup check here as it will be captured to the shared preferences by the listener
-//                String lckup = " false.";
-//                CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
-//                if (mirrorLockupChkBx.isChecked()) {
-//                    mLockup = true;
-//                    lckup = " true.";
-//                } else {
-//                    mLockup = false;
-//                }
-//                sharedPreference.saveBoolean(context, SharedPreference.MIRROR_LOCKUP_KEY, mLockup);
-//                toast = Toast.makeText(ActivityAppendSession.this, "Lockup: " + lckup, Toast.LENGTH_SHORT);
-//                toast.show();
-
-//                There is no need to do the RadioGroup check here as it will be captured to the shared preferences by the listener
-//                RadioGroup radioGroup = (RadioGroup) findViewById(R.id.imageTypeRadioGroup);
-//                // is anything checked?
-//
-//                int selectedId = radioGroup.getCheckedRadioButtonId();
-//
-//                // check which button is checked
-//                switch (selectedId) {
-//                    case R.id.radioButtonPolarAlign:
-//                        mImageType = mImageTypes[mPolAln];
-//                        break;
-//                    case R.id.radioButtonFocus:
-//                        mImageType = mImageTypes[mFcs];
-//                        break;
-//                    case R.id.radioButtonLights:
-//                        mImageType = mImageTypes[mLght];
-//                        break;
-//                    case R.id.radioButtonDarks:
-//                        mImageType = mImageTypes[mDrk];
-//                        break;
-//                    case R.id.radioButtonBias:
-//                        mImageType = mImageTypes[mBs];
-//                        break;
-//                    case R.id.radioButtonFlat:
-//                        mImageType = mImageTypes[mFlt];
-//                        break;
-//                    case R.id.radioButtonCalibration:
-//                        mImageType = mImageTypes[mCal];
-//                        break;
-//                    case R.id.radioButtonOther:
-//                        mImageType = mImageTypes[mOthrRb];
-//                        break;
-//                    default:
-//                        mImageType = "NO IMAGETYPE SELECTION";
-//                }
-//                sharedPreference = new SharedPreference();
-//                sharedPreference.saveString(context, SharedPreference.IMAGE_TYPE_KEY, mImageType);
-//                Toast toast = Toast.makeText(ActivityAppendSession.this, "Radio Button = " + mImageType, Toast.LENGTH_SHORT);
-//                toast.show();
-
             }
         });
-
-
 
         CheckBox mirrorLockupChkBx = (CheckBox) findViewById(R.id.mirrorLockupCBx);
         mirrorLockupChkBx.setOnClickListener(new View.OnClickListener() {
@@ -464,30 +412,6 @@ public class ActivityAppendSession extends AppCompatActivity {
 
         otherChkBx.setChecked(mOthr);
 
-//        EditText expTimeEdtTxt = (EditText) findViewById(R.id.expTimeEditTxt);
-//        String mExpTm = expTimeEdtTxt.getText().toString();
-//        if (mExpTm.equals("")) {
-//            myExpTime = 0;
-//            mExpTm = "Exposure Time not set.";
-//        } else {
-//            myExpTime = Integer.parseInt(mExpTm);
-//        }
-//        sharedPreference.saveInt(context, SharedPreference.ISO_KEY, myISO);
-//        Toast toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_SHORT);
-//        toast.show();
-//
-//        EditText isoEdtTxt = (EditText) findViewById(R.id.editISO);
-//        String mISO = isoEdtTxt.getText().toString();
-//        if (mISO.equals("")) {
-//            myISO = -999;
-//            mISO = "ISO not set.";
-//        } else {
-//            myISO = Integer.parseInt(mISO);
-//        }
-//        sharedPreference.saveInt(context, SharedPreference.ISO_KEY, myISO);
-//        toast = Toast.makeText(ActivityAppendSession.this, mISO, Toast.LENGTH_SHORT);
-//        toast.show();
-
         EditText expTimeEdtTxt = (EditText) findViewById(R.id.expTimeEditTxt);
         // TODO:  Need a better way to handle this.  Right now a <CR> is needed to call this routine
         expTimeEdtTxt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -515,6 +439,8 @@ public class ActivityAppendSession extends AppCompatActivity {
                 return false;
             }
         });
+        int mIso = mSharedPreference.getIntValue(context, SharedPreference.ISO_KEY);
+        IsoEdtTxt.setText(Integer.toString(mIso));
 
         EditText TargetIdEdtTxt = (EditText) findViewById(R.id.editTargetID);
         // TODO:  Need a better way to handle this.  Right now a <CR> is needed to call this routine
@@ -529,15 +455,17 @@ public class ActivityAppendSession extends AppCompatActivity {
             }
         });
 
+        String mTrgtId = mSharedPreference.getStringValue(context, SharedPreference.TARGET_ID_KEY);
+        // TODO:  For all similar statements in this class (and others) need to figure out how
+        // to handle the possible null pointer exceptions
+        if (mTrgtId.equals("NOT INITIALIZED")) {
+            mTrgtId = null;
+        } else {
+            TargetIdEdtTxt.setText(mTrgtId);
+        }
+        TargetIdEdtTxt.setText(mTrgtId);
+
         int mExpTime = mSharedPreference.getIntValue(context, SharedPreference.EXPOSURE_TIME_KEY);
         expTimeEdtTxt.setText(Integer.toString(mExpTime));
-
-        EditText expIsoTxt = (EditText) findViewById(R.id.editISO);
-        int mIso = mSharedPreference.getIntValue(context, SharedPreference.ISO_KEY);
-        expIsoTxt.setText(Integer.toString(mIso));
-
-        EditText targetId = (EditText) findViewById(R.id.editTargetID);
-        String mTrgtId = mSharedPreference.getStringValue(context, SharedPreference.TARGET_ID_KEY);
-        targetId.setText(mTrgtId);
     }
 }

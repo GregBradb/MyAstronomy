@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -59,36 +59,248 @@ public class ActivityCreateSession extends AppCompatActivity {
     private String mAndroidTZ;
     private Boolean mAndroidDST;
 
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-
     private SharedPreference sharedPreference, mSharedPreference;
     Activity context = this;
 
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
-
+//    private ViewPager mViewPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.management_create_session);
-
+        setContentView(R.layout.activity_create_session);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+//        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+//        mViewPager = (ViewPager) findViewById(R.id.container);
+//        mViewPager.setAdapter(mSectionsPagerAdapter);
 
         mSharedPreference = new SharedPreference();
-        String tString = mSharedPreference.getStringValue(this,SharedPreference.SESSION_NAME_KEY);
+        sharedPreference = new SharedPreference();
 
-//        EditText ezTextual = (EditText) findViewById(R.id.session_edit_text);
-//        ezTextual.setText(tString);
+        // TODO:  Check to see if this works even if the Shared Preference string is empty
+        String tmpStrngSssn = mSharedPreference.getStringValue(this, SharedPreference.SESSION_NAME_KEY);
+        EditText tmpSssnET = (EditText) findViewById(R.id.session_edit_text);
+        if (tmpStrngSssn.equals("NOT INITIALIZED")) {
+            // TODO:  Can I delete the following line in this place and all others?  They don't appear to be used.
+            tmpStrngSssn = null;
+        } else {
+            tmpSssnET.setText(tmpStrngSssn);
+        }
+
+        // TODO:  Need a better way to handle this.  Right now a <CR> is needed to call this routine
+        tmpSssnET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String mSessionName = v.getText().toString();
+                sharedPreference.saveString(context, SharedPreference.SESSION_NAME_KEY, mSessionName);
+                Toast toast = Toast.makeText(context, mSessionName, Toast.LENGTH_SHORT);
+                toast.show();
+
+                String mLocation = mSharedPreference.getStringValue(context, SharedPreference.LOCATION_ID_KEY);
+                if (mLocation.equals("NOT INITIALIZED")) {
+                    mFileName = mSessionName;
+                } else {
+                    if (mLocation.length() == 0) {
+                        mFileName = mSessionName;
+                    } else {
+                        mFileName = mSessionName + mLocation;
+                    }
+                }
+
+                TextView tmpFlNm = (TextView) findViewById(R.id.file_name_text_view);
+                tmpFlNm.setText(mFileName);
+
+                return false;
+            }
+        });
+
+        String tmpStrngLctn = mSharedPreference.getStringValue(this, SharedPreference.LOCATION_ID_KEY);
+        EditText tmpLctnET = (EditText) findViewById(R.id.location_edit_text);
+        if (tmpStrngLctn.equals("NOT INITIALIZED")) {
+            tmpStrngLctn = null;
+        } else {
+            tmpLctnET.setText(tmpStrngLctn);
+        }
+
+        tmpLctnET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String mLocation = v.getText().toString();
+                sharedPreference.saveString(context, SharedPreference.LOCATION_ID_KEY, mLocation);
+                Toast toast = Toast.makeText(context, mLocation, Toast.LENGTH_SHORT);
+                toast.show();
+
+                String mSessionName = mSharedPreference.getStringValue(context, SharedPreference.SESSION_NAME_KEY);
+                if (mSessionName.equals("NOT INITIALIZED")) {
+                    mFileName = mLocation;
+                } else {
+                    if (mSessionName.length() == 0) {
+                        mFileName = mLocation;
+                    } else {
+                        mFileName = mSessionName + mLocation;
+                    }
+                }
+
+                TextView tmpFlNm = (TextView) findViewById(R.id.file_name_text_view);
+                tmpFlNm.setText(mFileName);
+
+                return false;
+            }
+        });
+
+        String mFilename = mSessionName + mLocation;
+        TextView flnmTV = (TextView) findViewById(R.id.file_name_text_view);
+        flnmTV.setText(mFilename);
+
+        String tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.FILE_NAME_KEY);
+        TextView tmpFlNm = (TextView) findViewById(R.id.file_name_text_view);
+        tmpFlNm.setText(tmpStrng);
+
+//        tmpFlNm.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+//                String mFileName = v.getText().toString();
+//                sharedPreference.saveString(context, SharedPreference.FILE_NAME_KEY, mFileName);
+//                Toast toast = Toast.makeText(context, mFileName, Toast.LENGTH_SHORT);
+//                toast.show();
+//                return false;
+//            }
+//        });
+
+        tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.CAMERA_ID_KEY);
+        EditText tmpCmrIdET = (EditText) findViewById(R.id.camera_id);
+        if (tmpStrng.equals("NOT INITIALIZED")) {
+            tmpStrng = null;
+        } else {
+            tmpCmrIdET.setText(tmpStrng);
+        }
+
+        tmpCmrIdET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String mCameraID = v.getText().toString();
+                sharedPreference.saveString(context, SharedPreference.CAMERA_ID_KEY, mCameraID);
+                Toast toast = Toast.makeText(context, mCameraID, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.CAMERA_TIME_ZONE_KEY);
+        EditText tmpCmrTmZnET = (EditText) findViewById(R.id.camera_time_zone);
+        if (tmpStrng.equals("NOT INITIALIZED")) {
+            tmpStrng = null;
+        } else {
+            tmpCmrTmZnET.setText(tmpStrng);
+        }
+
+        tmpCmrTmZnET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String mCameraTimeZone = v.getText().toString();
+                sharedPreference.saveString(context, SharedPreference.CAMERA_TIME_ZONE_KEY, mCameraTimeZone);
+                Toast toast = Toast.makeText(context, mCameraTimeZone, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        boolean tmpBl = mSharedPreference.getBooleanValue(this, SharedPreference.CAMERA_DST_KEY);
+        CheckBox tmpCmrDstStCB = (CheckBox) findViewById(R.id.camera_dst_set);
+        tmpCmrDstStCB.setChecked(tmpBl);
+
+        tmpCmrDstStCB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(context, "Camera DST", Toast.LENGTH_SHORT);
+                toast.show();
+
+                String dstSet = " false.";
+                CheckBox tmpCmrDstStCB = (CheckBox) findViewById(R.id.camera_dst_set);
+                if (tmpCmrDstStCB.isChecked()) {
+                    mCameraDST = true;
+                    dstSet = " true.";
+                } else {
+                    mCameraDST = false;
+                }
+                SharedPreference sharedPreference2 = new SharedPreference();
+
+                sharedPreference2.saveBoolean(context, SharedPreference.CAMERA_DST_KEY, mCameraDST);
+                toast = Toast.makeText(context, "Camera DST set:" + dstSet, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.ANDROID_ID_KEY);
+        EditText tmpAndrdIdET = (EditText) findViewById(R.id.android_id);
+        if (tmpStrng.equals("NOT INITIALIZED")) {
+            tmpStrng = null;
+        } else {
+            tmpAndrdIdET.setText(tmpStrng);
+        }
+
+        tmpAndrdIdET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String mAndroidID = v.getText().toString();
+                sharedPreference.saveString(context, SharedPreference.ANDROID_ID_KEY, mAndroidID);
+                Toast toast = Toast.makeText(context, mAndroidID, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.ANDROID_TIME_ZONE_KEY);
+        EditText tmpAndrdTmZnET = (EditText) findViewById(R.id.android_time_zone);
+        if (tmpStrng.equals("NOT INITIALIZED")) {
+            tmpStrng = null;
+        } else {
+            tmpAndrdTmZnET.setText(tmpStrng);
+        }
+
+        tmpAndrdTmZnET.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                String mAndroidTimeZone = v.getText().toString();
+                sharedPreference.saveString(context, SharedPreference.ANDROID_TIME_ZONE_KEY, mAndroidTimeZone);
+                Toast toast = Toast.makeText(context, mAndroidTimeZone, Toast.LENGTH_SHORT);
+                toast.show();
+                return false;
+            }
+        });
+
+        tmpBl = mSharedPreference.getBooleanValue(this, SharedPreference.ANDROID_DST_KEY);
+        CheckBox tmpAndrdDstStCB = (CheckBox) findViewById(R.id.android_dst_set);
+        // TODO:  For all similar statements in this class (and others) need to figure out how
+        // to handle the possible null pointer exceptions
+
+        tmpAndrdDstStCB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(context, "Android DST", Toast.LENGTH_SHORT);
+                toast.show();
+
+                String dstSet = " false.";
+                CheckBox tmpAndrdDstStCB = (CheckBox) findViewById(R.id.android_dst_set);
+                if (tmpAndrdDstStCB.isChecked()) {
+                    mAndroidDST = true;
+                    dstSet = " true.";
+                } else {
+                    mAndroidDST = false;
+                }
+                SharedPreference sharedPreference2 = new SharedPreference();
+
+                sharedPreference2.saveBoolean(context, SharedPreference.ANDROID_DST_KEY, mAndroidDST);
+                toast = Toast.makeText(context, "Android DST set:" + dstSet, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -235,48 +447,11 @@ public class ActivityCreateSession extends AppCompatActivity {
         }
 
         @Override
-        public View onCreateView (LayoutInflater inflater, ViewGroup container,
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_management_create_session, container, false);
+            View rootView = inflater.inflate(R.layout.content_create_session, container, false);
 
             return rootView;
-        }
-    }
-
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
-    public static class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
-        }
-
-        @Override
-        public int getCount() {
-            // Show 3 total pages.
-            return 3;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return "SECTION 1";
-                case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
-            }
-            return null;
         }
     }
 }

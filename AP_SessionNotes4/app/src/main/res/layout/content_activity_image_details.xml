@@ -57,7 +57,7 @@
 
                 <EditText
                     android:id="@+id/expTimeEditTxt"
-                    android:layout_width="75dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
                     android:layout_gravity="end"
