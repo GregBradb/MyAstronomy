@@ -86,9 +86,11 @@ public class ActivityCreateSession extends AppCompatActivity {
         // TODO:  Check to see if this works even if the Shared Preference string is empty
         String tmpStrngSssn = mSharedPreference.getStringValue(this, SharedPreference.SESSION_NAME_KEY);
         EditText tmpSssnET = (EditText) findViewById(R.id.session_edit_text);
+        mSessionName = tmpStrngSssn;
         if (tmpStrngSssn.equals("NOT INITIALIZED")) {
             // TODO:  Can I delete the following line in this place and all others?  They don't appear to be used.
-            tmpStrngSssn = null;
+//            tmpStrngSssn = null;
+            tmpSssnET.setHint("NOT INITIALIZED");
         } else {
             tmpSssnET.setText(tmpStrngSssn);
         }
@@ -109,7 +111,7 @@ public class ActivityCreateSession extends AppCompatActivity {
                     if (mLocation.length() == 0) {
                         mFileName = mSessionName;
                     } else {
-                        mFileName = mSessionName + mLocation;
+                        mFileName = mSessionName + "_" + mLocation;
                     }
                 }
 
@@ -122,8 +124,14 @@ public class ActivityCreateSession extends AppCompatActivity {
 
         String tmpStrngLctn = mSharedPreference.getStringValue(this, SharedPreference.LOCATION_ID_KEY);
         EditText tmpLctnET = (EditText) findViewById(R.id.location_edit_text);
+        mLocation = tmpStrngLctn;
         if (tmpStrngLctn.equals("NOT INITIALIZED")) {
             tmpStrngLctn = null;
+            if ((mSessionName.length() == 0) | (mSessionName.equals("NOT INITIALIZED"))) {
+                tmpLctnET.setHint(tmpStrngLctn);
+            } else {
+                tmpLctnET.setText(mSessionName);
+            }
         } else {
             tmpLctnET.setText(tmpStrngLctn);
         }
@@ -154,13 +162,17 @@ public class ActivityCreateSession extends AppCompatActivity {
             }
         });
 
-        String mFilename = mSessionName + mLocation;
+        // TODO:  It appears I am writing the wrong value to the filename.  At this point shouldn't I have a complete and correct file name?
+        // TODO:  Do I need to check the contents of mSessionName and mLocation to ensure they aren't null?
+        String mFilename = mSessionName + "_" +  mLocation;
         TextView flnmTV = (TextView) findViewById(R.id.file_name_text_view);
         flnmTV.setText(mFilename);
 
-        String tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.FILE_NAME_KEY);
-        TextView tmpFlNm = (TextView) findViewById(R.id.file_name_text_view);
-        tmpFlNm.setText(tmpStrng);
+        // TODO:  I probably should not use the value in the shared preferences at this point....  I can just re-calculate it as above
+//        String tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.FILE_NAME_KEY);
+// //        TextView tmpFlNm = (TextView) findViewById(R.id.file_name_text_view);
+// //        tmpFlNm.setText(tmpStrng);
+//        flnmTV.setText(tmpStrng);
 
 //        tmpFlNm.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 //            @Override
@@ -173,7 +185,7 @@ public class ActivityCreateSession extends AppCompatActivity {
 //            }
 //        });
 
-        tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.CAMERA_ID_KEY);
+        String tmpStrng = mSharedPreference.getStringValue(this, SharedPreference.CAMERA_ID_KEY);
         EditText tmpCmrIdET = (EditText) findViewById(R.id.camera_id);
         if (tmpStrng.equals("NOT INITIALIZED")) {
             tmpStrng = null;
@@ -321,7 +333,7 @@ public class ActivityCreateSession extends AppCompatActivity {
                 Log.i(CREATE_SESSION_MESSAGE, "Location: " + mLocation);
 
                 TextView fname = (TextView) findViewById(R.id.file_name_text_view);
-                mFileName = mLocation + "_" + mSessionName;
+                mFileName = mSessionName + "_" + mLocation;
                 fname.setText(mFileName);
                 sharedPreference.saveString(context, SharedPreference.FILE_NAME_KEY, mFileName);
                 Log.i(CREATE_SESSION_MESSAGE, "File Name will be: " + mFileName);
