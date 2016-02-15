@@ -2,6 +2,8 @@ package com.comcast.g_bradburn.ap_sessionnotes4;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -32,12 +34,20 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreference sharedPreference;
     Activity context = this;
 
+    SQLiteOpenHelper dbHelper;
+    SQLiteDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        dbHelper = new AP_Session_DBOpenHelper(this);
+        database = dbHelper.getWritableDatabase();
+
+        // TODO:  Create a listadapter for the table
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_main);
         fab.setOnClickListener(new View.OnClickListener() {
