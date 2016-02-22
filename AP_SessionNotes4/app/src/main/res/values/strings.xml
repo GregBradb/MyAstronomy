@@ -97,5 +97,7 @@
     <string name="momentary_txt">Momentary</string>
     <string name="latched_txt">Latched</string>
     <string name="gmt_init_txt">GMT -</string>
+    <string name="label_session_name">Session:</string>
+    <string name="label_location">Location:</string>
 
 </resources>

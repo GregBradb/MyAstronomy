@@ -2,8 +2,6 @@ package com.comcast.g_bradburn.ap_sessionnotes4;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -34,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreference sharedPreference;
     Activity context = this;
 
-    SQLiteOpenHelper dbHelper;
-    SQLiteDatabase database;
+//    SQLiteOpenHelper dbHelper;
+//    SQLiteDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        dbHelper = new AP_Session_DBOpenHelper(this);
-        database = dbHelper.getWritableDatabase();
+//        dbHelper = new AP_Session_DBOpenHelper(this);
+//        database = dbHelper.getWritableDatabase();
 
         // TODO:  Create a listadapter for the table
 
@@ -293,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
                     Uri fileOutputStream = data.getData();
                     // TODO:  Figure out how to get the stream from the URI using a ContentResolver???
                     Toast toast = Toast.makeText(this, "Getting activity result", Toast.LENGTH_LONG);
+                    toast.show();
                     break;
                 default:
                     break;

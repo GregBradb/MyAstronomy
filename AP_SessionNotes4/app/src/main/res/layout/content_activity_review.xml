@@ -13,28 +13,81 @@
     tools:showIn="@layout/activity_review">
 
     <TextView
+        android:id="@+id/label_session_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/label_location"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/label_session_name" />
+
+    <TextView
+        android:id="@+id/text_session_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/label_session_name"
+        android:layout_toRightOf="@+id/label_session_name"
+        android:text="Dummy Session Name"
+        android:layout_above="@+id/text_location" />
+
+    <TextView
+        android:id="@+id/label_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/show_list"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="@string/label_location" />
+
+    <TextView
+        android:id="@+id/text_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/label_location"
+        android:layout_toRightOf="@+id/label_location"
+        android:text="Dummy Location Name"
+        android:layout_above="@+id/show_list" />
+
+    <ListView
+        android:id="@+id/show_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewReview"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </ListView>
+
+    <TextView
         android:id="@+id/textViewReview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="50dp"
         android:text="@string/label_session_to_review" />
 
-    <EditText
-        android:id="@+id/editReviewSession"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textViewReview"
-        android:inputType="textMultiLine"
-        android:text="@string/review_session_text" />
+    <!--
+        <EditText
+            android:id="@+id/editReviewSession"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewReview"
+            android:inputType="textMultiLine"
+            android:text="@string/review_session_text" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="55dp"
-        android:layout_toEndOf="@+id/textViewReview"
-        android:layout_toRightOf="@+id/textViewReview"
-        android:src="@drawable/content_edit" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="55dp"
+            android:layout_toEndOf="@+id/textViewReview"
+            android:layout_toRightOf="@+id/textViewReview"
+            android:src="@drawable/content_edit" />
+    -->
 
 </RelativeLayout>

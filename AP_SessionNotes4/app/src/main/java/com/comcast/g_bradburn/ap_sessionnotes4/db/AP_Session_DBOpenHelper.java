@@ -1,4 +1,4 @@
-package com.comcast.g_bradburn.ap_sessionnotes4;
+package com.comcast.g_bradburn.ap_sessionnotes4.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -95,13 +95,13 @@ public class AP_Session_DBOpenHelper extends SQLiteOpenHelper {
                                 String latched_interf,
                                 String camera_id,
                                 String camera_tz,
-                                boolean camera_dst_set,
+                                String camera_dst_set,
                                 String iso,
                                 String exp,
-                                boolean lockup,
+                                String lockup,
                                 String android_id,
                                 String android_tz,
-                                boolean android_dst_set) {
+                                String android_dst_set) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(AP_SESSION_COLUMN_SESSION_NAME, session_name);
